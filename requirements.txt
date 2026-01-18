@@ -1,0 +1,23 @@
+# Core AI libraries
+anthropic==0.39.0
+openai==1.58.1
+
+# Data validation
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# Utilities
+python-dotenv==1.0.1
+requests==2.32.3
+
+# LangChain (will add in Phase 3)
+# langchain==0.3.13
+# langchain-anthropic==0.3.4
+# langgraph==0.2.59
+
+# Vector DB (will add in Phase 3)
+# supabase==2.10.0
+
+# CLI (will add in Phase 1)
+# click==8.1.8
+# rich==13.9.4
