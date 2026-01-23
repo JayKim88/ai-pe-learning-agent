@@ -10,11 +10,18 @@ This project builds a learning management system powered by AI agents to help yo
 
 ## Tech Stack
 
+**AI Engineering:**
 - Python 3.11+
 - Claude API (Anthropic)
 - LangChain / LangGraph
 - Supabase (Vector DB)
 - Pydantic (Data Validation)
+
+**Infrastructure & Production:**
+- Docker & Kubernetes
+- Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
+- OpenTelemetry
+- Kafka (Company context)
 
 ## Getting Started
 
@@ -69,21 +76,44 @@ ai-pe-learning-agent/
 
 ## Learning Roadmap
 
-- [x] Week 0: Python Basics + Environment Setup
+**Infrastructure Fundamentals (NEW ⭐):**
+- [ ] Week 1-2: Docker + Kubernetes + LGTM Stack basics
+
+**AI Engineering Core:**
+- [ ] Week 0: Python Basics + Environment Setup
 - [ ] Week 1-2: Phase 1 - Prompt Reviewer
 - [ ] Week 3-4: Phase 2 - Code Critic
-- [ ] Week 5-6: Phase 3 - Vector DB Integration
-- [ ] Week 7-8: Phase 4 - LangGraph + Evaluation
-- [ ] Week 9-10: Phase 5 - Optimization
+- [ ] Week 5-6: Phase 3 - Vector DB + Observability Integration
+- [ ] Week 7-8: Phase 4 - LangGraph + Distributed Tracing
+- [ ] Week 9-10: Phase 5 - K8s Deployment + Full LGTM Monitoring
 
-See detailed roadmap: [docs/ROADMAP.md](docs/ROADMAP.md)
+**Total Timeline:** ~8 weeks (2 weeks infrastructure + 6 weeks AI core)
+
+**Why Infrastructure First?**
+AI Product Engineer = AI Development + Production Deployment. Understanding Docker, K8s, and observability (LGTM) is essential for deploying AI systems to production and monitoring costs/performance.
+
+See detailed plans:
+- [docs/ROADMAP.md](docs/ROADMAP.md) - Complete learning roadmap
+- [docs/INFRASTRUCTURE-TRACK.md](docs/INFRASTRUCTURE-TRACK.md) - Infrastructure deep dive
 
 ## Next Steps
 
-1. Run `src/hello_claude.py` successfully
-2. Record learning in `learning/week-00-python-basics/notes.md`
-3. Learn Python basics (1 week)
-4. Start Phase 1
+**This Weekend (Jan 25-26):**
+1. Start Phase 0a: Infrastructure Fundamentals
+2. Docker basics tutorial (4 hours)
+3. Containerize simple NestJS app
+4. Document learnings in `~/Documents/Projects/infra-learning/`
+
+**Next 2 Weeks:**
+1. Complete Docker + Kubernetes basics
+2. Setup local LGTM stack
+3. Create first Grafana dashboard
+4. Analyze VNTG company stack
+
+**Then:**
+1. Week 0: Python Basics (1 week)
+2. Phase 1: Prompt Reviewer (2 weeks)
+3. Deploy to K8s with full observability (Phase 5)
 
 ## Resources
 

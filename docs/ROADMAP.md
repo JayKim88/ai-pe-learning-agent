@@ -25,12 +25,26 @@ This project is a meta-learning initiative that builds a multi-agent system to m
 ## Project Goals
 
 ### Learning Objectives
+
+**AI Engineering Core:**
 - [ ] AI agent design and implementation capabilities
 - [ ] Prompt engineering (System Prompt, Few-shot, Chain-of-Thought)
 - [ ] Agentic workflows (Planning → Execution → Evaluation)
 - [ ] Complex state management with LangGraph
 - [ ] Context management with Vector DB
 - [ ] Evaluation and quality management system construction
+
+**Infrastructure & Production (NEW ⭐):**
+- [ ] Docker containerization and orchestration
+- [ ] Kubernetes deployment and management
+- [ ] Observability with Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
+- [ ] Distributed tracing for multi-agent systems
+- [ ] Cost monitoring and optimization
+- [ ] Production debugging and troubleshooting
+
+> **Why Infrastructure?** AI Product Engineer = AI Development + Production Deployment.
+> Infrastructure knowledge is essential for deploying AI systems to production, monitoring costs,
+> and debugging issues. See [INFRASTRUCTURE-TRACK.md](INFRASTRUCTURE-TRACK.md) for details.
 
 ### Deliverable Goals
 - [ ] Functioning learning management agent system
@@ -39,10 +53,12 @@ This project is a meta-learning initiative that builds a multi-agent system to m
 - [ ] Portfolio-ready project for resume
 
 ### Success Criteria
+- [ ] **Phase 0a Complete**: Understand Docker, K8s, LGTM basics (company stack)
 - [ ] **Phase 1 Complete**: Single feature (prompt reviewer) working and used daily
 - [ ] **Phase 2 Complete**: 2+ agents collaborating
-- [ ] **Phase 3 Complete**: Learning history tracking with Vector DB
-- [ ] **Final**: Actually using for 3+ months with tangible learning benefits
+- [ ] **Phase 3 Complete**: Learning history tracking with Vector DB + Basic observability
+- [ ] **Phase 5 Complete**: AI agents deployed on Kubernetes with full LGTM monitoring
+- [ ] **Final**: Production-ready system used for 3+ months with measurable results
 
 ## Repository Structure (Separate Repository)
 
@@ -334,24 +350,75 @@ learning/**/reviews/
 
 ## Phase-by-Phase Implementation Plan
 
-### Phase 0: Project Preparation (1 week)
-**Goal**: Project design and environment setup
+### Phase 0a: Infrastructure Fundamentals (2 weeks) ⭐ NEW
 
-**Tasks**:
-- [x] Write project planning document (this document)
-- [ ] Create separate Git repository (`ai-pe-learning-agent`)
-- [ ] Initialize repository structure
-- [ ] Decide tech stack
-- [ ] Setup development environment (Python, Claude API)
-- [ ] Create `learning/week-01-prompt-engineering/` directory
-- [ ] Detailed design for first Phase
+**Goal**: Understand production infrastructure for AI deployment
 
-**Deliverables**:
-- Git repository with initial structure
-- README.md (project introduction)
-- docs/ARCHITECTURE.md (system design)
-- learning/week-01/ template
-- Development environment ready
+**Why First?**
+- Aligns with current VNTG work (immediate value)
+- Provides foundation for later AI system deployment
+- Demonstrates production-readiness mindset from day 1
+
+**Learning Topics:**
+- Docker basics: Images, containers, Dockerfile, docker-compose
+- Kubernetes fundamentals: Pods, Deployments, Services
+- Grafana LGTM Stack: Loki (logs), Grafana (visualization), Tempo (traces), Mimir (metrics)
+- OpenTelemetry basics: Instrumentation, exporters
+
+**Tasks:**
+- [ ] **Week 1: Docker + Kubernetes**
+  - Install Docker and minikube
+  - Complete Docker tutorial
+  - Containerize simple NestJS app
+  - Learn kubectl basics (get, describe, logs)
+  - Analyze VNTG docker-compose.yml
+
+- [ ] **Week 2: LGTM Stack**
+  - Setup local LGTM stack with docker-compose
+  - Integrate simple app with OpenTelemetry
+  - Send logs/metrics/traces to LGTM
+  - Create first Grafana dashboard
+  - Document VNTG stack architecture
+
+**Deliverables:**
+- `~/infra-labs/` - Local practice environment
+  - docker-basics/
+  - kubernetes-basics/
+  - lgtm-stack/ (working Grafana + Loki + Tempo + Mimir)
+- `~/Documents/Projects/infra-learning/` - Learning notes
+  - week-01-docker-kubernetes.md
+  - week-02-lgtm-stack.md
+  - vntg-stack-analysis.md
+
+**Success Criteria:**
+- [ ] Can build and run Docker containers confidently
+- [ ] Understand K8s Pod/Deployment/Service concepts
+- [ ] Have working local LGTM stack
+- [ ] Created first Grafana dashboard
+- [ ] Can explain VNTG architecture to teammates
+
+**Reference:** [INFRASTRUCTURE-TRACK.md](INFRASTRUCTURE-TRACK.md) - Detailed implementation guide
+
+---
+
+### Phase 0b: Project Setup (Completed ✅)
+
+**Goal**: Repository and development environment
+
+**Completed Tasks:**
+- [x] Write project planning documents
+- [x] Create Git repository (`ai-pe-learning-agent`)
+- [x] Initialize repository structure
+- [x] Decide tech stack (Python, LangGraph, Claude API)
+- [x] Create documentation (README, ROADMAP, GETTING-STARTED)
+- [x] Setup learning directory structure
+- [x] Create Week 0 Python basics guide
+
+**Deliverables:**
+- ✅ Git repository with initial structure
+- ✅ README.md, ROADMAP.md, INFRASTRUCTURE-TRACK.md
+- ✅ learning/week-00-python-basics/notes.md
+- ✅ src/hello_claude.py example
 
 ---
 
