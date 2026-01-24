@@ -6,7 +6,7 @@
 
 This project builds a learning management system powered by AI agents to help you become an AI Product Engineer.
 
-**Current Status**: Week 0 - Python Basics
+**Current Status**: Phase 0a - Infrastructure Fundamentals
 
 ## Tech Stack
 
@@ -23,39 +23,23 @@ This project builds a learning management system powered by AI agents to help yo
 - OpenTelemetry
 - Kafka (Company context)
 
-## Getting Started
+## Quick Start
 
-### 1. Environment Setup
+**5-minute setup:**
 
 ```bash
-# Create virtual environment
-python3 -m venv venv
-
-# Activate virtual environment
-source venv/bin/activate  # Mac/Linux
-# venv\Scripts\activate  # Windows
-
-# Install packages
+# 1. Setup environment (detailed guide below)
+python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-```
 
-### 2. API Key Setup
+# 2. Configure API key
+cp .env.example .env  # Then add your ANTHROPIC_API_KEY
 
-```bash
-# Create .env file
-cp .env.example .env
-
-# Edit .env file
-# ANTHROPIC_API_KEY=your_api_key_here
-```
-
-### 3. Run First Code
-
-```bash
+# 3. Run first code
 python src/hello_claude.py
 ```
 
-Success! Claude will respond! 🎉
+**Detailed instructions:** [Getting Started Guide](docs/guides/GETTING-STARTED.md)
 
 ## Project Structure
 
@@ -69,51 +53,82 @@ ai-pe-learning-agent/
 │   └── week-00-python-basics/
 ├── tests/                 # Tests
 ├── docs/                  # Documentation
-│   ├── ROADMAP.md        # Detailed learning roadmap
-│   └── GETTING-STARTED.md # Quick start guide
+│   ├── guides/           # Getting started guides
+│   ├── infrastructure/  # Infrastructure docs
+│   ├── planning/        # Roadmaps and planning
+│   ├── reference/       # Reference documentation
+│   └── user/            # User-specific (gitignored)
 └── requirements.txt       # Python packages
 ```
 
 ## Learning Roadmap
 
-**Infrastructure Fundamentals (NEW ⭐):**
-- [ ] Week 1-2: Docker + Kubernetes + LGTM Stack basics
+**Phase 0a: Infrastructure Fundamentals (NEW ⭐)**
+- Docker & Kubernetes basics
+- Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
+- Production observability patterns
 
-**AI Engineering Core:**
-- [ ] Week 0: Python Basics + Environment Setup
-- [ ] Week 1-2: Phase 1 - Prompt Reviewer
-- [ ] Week 3-4: Phase 2 - Code Critic
-- [ ] Week 5-6: Phase 3 - Vector DB + Observability Integration
-- [ ] Week 7-8: Phase 4 - LangGraph + Distributed Tracing
-- [ ] Week 9-10: Phase 5 - K8s Deployment + Full LGTM Monitoring
+**Week 0: Python Basics**
+- TypeScript → Python transition
+- Virtual environments & package management
+- First Claude API integration
 
-**Total Timeline:** ~8 weeks (2 weeks infrastructure + 6 weeks AI core)
+**Phase 1: Prompt Reviewer**
+- Single agent MVP
+- Structured Output & Guardrails
+- Few-shot, Chain-of-Thought patterns
+
+**Phase 2: Code Critic**
+- Multi-agent foundation
+- Validation & retry logic
+- Best practices enforcement
+
+**Phase 3: Vector DB + Observability**
+- RAG & learning history
+- OpenTelemetry integration
+- Basic monitoring
+
+**Phase 4: LangGraph + Evaluation**
+- Workflow orchestration
+- Distributed tracing
+- LLM-as-a-Judge
+
+**Phase 5: Production Deployment**
+- Kubernetes deployment
+- Full LGTM monitoring
+- Cost optimization
 
 **Why Infrastructure First?**
-AI Product Engineer = AI Development + Production Deployment. Understanding Docker, K8s, and observability (LGTM) is essential for deploying AI systems to production and monitoring costs/performance.
+AI Product Engineer = AI Development + Production Deployment. Understanding Docker, K8s, and observability is essential for deploying AI systems to production.
 
-See detailed plans:
-- [docs/ROADMAP.md](docs/ROADMAP.md) - Complete learning roadmap
-- [docs/INFRASTRUCTURE-TRACK.md](docs/INFRASTRUCTURE-TRACK.md) - Infrastructure deep dive
+**See detailed plans:**
+- [ROADMAP.md](docs/planning/ROADMAP.md) - Complete phase-by-phase plan
+- [INFRASTRUCTURE-TRACK.md](docs/infrastructure/INFRASTRUCTURE-TRACK.md) - Infrastructure guide
+- [GETTING-STARTED.md](docs/guides/GETTING-STARTED.md) - Environment setup
 
 ## Next Steps
 
-**This Weekend (Jan 25-26):**
-1. Start Phase 0a: Infrastructure Fundamentals
-2. Docker basics tutorial (4 hours)
-3. Containerize simple NestJS app
-4. Document learnings in `~/Documents/Projects/infra-learning/`
+**Learning Path:**
+1. Phase 0a: Infrastructure Fundamentals - [INFRASTRUCTURE-TRACK.md](docs/infrastructure/INFRASTRUCTURE-TRACK.md)
+2. Week 0: Python Basics
+3. Phase 1-5: AI Agent Development - [ROADMAP.md](docs/planning/ROADMAP.md)
 
-**Next 2 Weeks:**
-1. Complete Docker + Kubernetes basics
-2. Setup local LGTM stack
-3. Create first Grafana dashboard
-4. Analyze VNTG company stack
+**Immediate Actions:**
+- [ ] Docker + Kubernetes basics
+- [ ] Setup local LGTM stack
+- [ ] Run `src/hello_claude.py` successfully
+- [ ] Begin Python learning
 
-**Then:**
-1. Week 0: Python Basics (1 week)
-2. Phase 1: Prompt Reviewer (2 weeks)
-3. Deploy to K8s with full observability (Phase 5)
+## Documentation
+
+| Document | Purpose |
+|----------|---------|
+| [GETTING-STARTED.md](docs/guides/GETTING-STARTED.md) | Environment setup, troubleshooting, initial steps |
+| [ROADMAP.md](docs/planning/ROADMAP.md) | Complete learning plan, all phases detailed |
+| [INFRASTRUCTURE-TRACK.md](docs/infrastructure/INFRASTRUCTURE-TRACK.md) | Docker, K8s, LGTM Stack production skills |
+| [PROJECT-ORIGIN.md](docs/planning/PROJECT-ORIGIN.md) | Original idea and project genesis |
+| [AGENTS-CONCEPTS.md](docs/reference/AGENTS-CONCEPTS.md) | Project agents vs Claude Code agents distinction |
+| [PROFILE.md](docs/user/PROFILE.md) | User background for agent personalization |
 
 ## Resources
 

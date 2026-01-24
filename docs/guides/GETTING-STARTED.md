@@ -1,5 +1,11 @@
 # Getting Started Guide
 
+> **Purpose:** Step-by-step setup instructions, troubleshooting, and Week 0 checklist
+> **For:** First-time setup and Python environment configuration
+> **See also:** [ROADMAP.md](../planning/ROADMAP.md) for learning plan, [INFRASTRUCTURE-TRACK.md](../infrastructure/INFRASTRUCTURE-TRACK.md) for production deployment
+
+---
+
 ## 🚀 Quick Start (5 minutes)
 
 ### Step 1: Get API Key (2 min)

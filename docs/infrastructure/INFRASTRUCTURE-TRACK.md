@@ -1,10 +1,12 @@
 # Infrastructure Learning Track
 
-> AI Product Engineer = AI Development + Production Deployment
+> **Purpose:** Complete guide to production deployment skills (Docker, K8s, LGTM Stack)
+> **For:** Phase 0a (Infrastructure Fundamentals) and Phase 3-5 (Production Integration)
+> **See also:** [ROADMAP.md](../planning/ROADMAP.md) for full learning plan
 
 **Strategy:** Manual Learning → AI Core → Infrastructure Integration
 **Goal:** Production-ready AI systems with full observability
-**Company Context:** VNTG stack (Docker, K8s, Grafana LGTM, Kafka)
+**Industry Stack:** Docker, Kubernetes, Grafana LGTM, Kafka
 
 ---
 
@@ -35,11 +37,11 @@ AI Product Engineer (Your Goal):
 
 ---
 
-## VNTG Stack = AI System Stack
+## Production Stack for AI Systems
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│  VNTG Stack (Now)          AI System Stack (Future)     │
+│  Web Apps (Traditional)    AI Systems (New Paradigm)    │
 ├────────────────────────────────────────────────────────┤
 │  Docker                 →  AI agent containerization    │
 │  Kubernetes             →  Agent deployment & scaling   │
@@ -49,16 +51,16 @@ AI Product Engineer (Your Goal):
 └────────────────────────────────────────────────────────┘
 ```
 
-**Example: Grafana LGTM for AI**
+**Example: Grafana LGTM Metrics Comparison**
 
-**At VNTG:**
+**Traditional Web Apps:**
 ```
-Mimir: NestJS API response time
+Mimir: API response time, request rate
 Tempo: HTTP request tracing
 Loki: Error log analysis
 ```
 
-**For AI Systems:**
+**AI Systems:**
 ```
 Mimir: LLM API calls, token usage, cost tracking
 Tempo: Multi-agent workflow tracing (which agent is slow?)
@@ -157,7 +159,7 @@ Kubernetes:
 ┌─────────────────────────────────────────────────────────┐
 │  Stage 1 (Now ~ 2 weeks): Manual Learning               │
 │  ─────────────────────────────────────────────────────   │
-│  Focus: Understand VNTG stack + AI deployment prep       │
+│  Focus: Understand production stack + AI deployment prep │
 │  Method: Direct hands-on practice                        │
 │  Output: Local lab + learning notes                      │
 └─────────────────────────────────────────────────────────┘
@@ -247,15 +249,15 @@ $ minikube service web
 # Create pod.yaml, deployment.yaml, service.yaml
 # Apply with: kubectl apply -f <file>
 
-# 4. Analyze VNTG configs (30 min)
-# If you have access, review company K8s YAML files
+# 4. Study production K8s patterns (30 min)
+# Review example K8s YAML files from documentation
 # Understand: resource limits, health checks, env vars
 ```
 
-**Day 6-7: Company Stack Analysis (4 hours)**
+**Day 6-7: Production Stack Practice (4 hours)**
 
 ```bash
-# 1. Review VNTG docker-compose.yml
+# 1. Review production-ready docker-compose patterns
 # Understand:
 - Service dependencies
 - Port mappings (3000, 4317, etc.)
@@ -263,35 +265,35 @@ $ minikube service web
 - Environment variables
 - Network configuration
 
-# 2. Try to recreate locally (simplified version)
-$ mkdir ~/infra-labs/company-stack
-$ cd ~/infra-labs/company-stack
+# 2. Build your own stack (simplified version)
+$ mkdir ~/infra-labs/production-stack
+$ cd ~/infra-labs/production-stack
 $ touch docker-compose.yml
 
 # Start with just Grafana + Loki
 # Gradually add Tempo, Mimir as you understand
 
 # 3. Document architecture
-$ code ~/Documents/Projects/infra-learning/vntg-stack-analysis.md
+$ code ~/Documents/Projects/infra-learning/production-stack-analysis.md
 ```
 
 **Week 1 Deliverables:**
 ```
 ~/infra-labs/
 ├── docker-basics/
-│   ├── Dockerfile.nestjs
+│   ├── Dockerfile.webapp
 │   └── docker-compose.simple.yml
 ├── kubernetes-basics/
 │   ├── pod.yaml
 │   ├── deployment.yaml
 │   └── service.yaml
-└── company-stack/
+└── production-stack/
     └── docker-compose.yml
 
 ~/Documents/Projects/infra-learning/
 ├── week-01-docker.md
 ├── week-01-kubernetes.md
-└── vntg-stack-analysis.md
+└── production-stack-analysis.md
 ```
 
 ### Week 2: LGTM Stack Deep Dive
@@ -448,7 +450,7 @@ After 2 weeks, you should be able to:
 - [ ] Have working local LGTM stack
 - [ ] Send traces/metrics/logs from simple app to LGTM
 - [ ] Read Grafana dashboards
-- [ ] Understand VNTG stack (no longer a black box)
+- [ ] Understand production observability architecture
 - [ ] Explain LGTM architecture to teammates
 
 ---
@@ -767,7 +769,7 @@ AI Product Engineer Learning System (2026.01 - 2026.08)
   · Hallucination detection: Real-time alerts (Loki)
 - Distributed tracing for multi-agent workflows
 - Docker containerization with multi-stage builds
-- Applied VNTG production stack to AI system
+- Applied industry-standard production stack to AI system
 - Tech: Python, LangGraph, K8s, Grafana LGTM, Docker
 ```
 
@@ -795,8 +797,8 @@ AI Product Engineer Learning System (2026.01 - 2026.08)
 - Semantic Caching: 70% cost reduction
 - Before/After proof via Grafana dashboard
 
-**Company Alignment:**
-At VNTG, we use the exact same LGTM stack, so I can apply this knowledge immediately to production work."
+**Industry Relevance:**
+This is the industry-standard observability stack, so I can apply this knowledge immediately to any production environment."
 
 → ✅ **Senior AI PE level**
 
@@ -861,7 +863,7 @@ Full LGTM integration + first dashboard
 - [ ] Understand K8s core resources
 - [ ] LGTM stack running locally
 - [ ] First Grafana dashboard created
-- [ ] Can explain VNTG architecture to peers
+- [ ] Can explain production observability architecture to peers
 
 **Stage 2 (6 weeks):**
 - [ ] Python fundamentals solid
@@ -880,4 +882,4 @@ Full LGTM integration + first dashboard
 **Created:** 2026-01-18
 **Status:** Ready to Execute
 **Next Review:** After Stage 1 (2 weeks)
-**Company Context:** VNTG (Figma-to-Code, LGTM Stack)
+**Production Context:** Industry-standard LGTM Stack

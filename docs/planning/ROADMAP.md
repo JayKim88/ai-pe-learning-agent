@@ -1,5 +1,11 @@
 # AI Product Engineer Learning Roadmap Project
 
+> **Purpose:** Complete 6-month learning plan with phase-by-phase implementation details
+> **For:** Understanding project goals, architecture, and detailed execution plan
+> **See also:** [GETTING-STARTED.md](../guides/GETTING-STARTED.md) for setup, [INFRASTRUCTURE-TRACK.md](../infrastructure/INFRASTRUCTURE-TRACK.md) for deployment
+
+---
+
 ## Project Overview
 
 ### Core Idea
@@ -44,7 +50,7 @@ This project is a meta-learning initiative that builds a multi-agent system to m
 
 > **Why Infrastructure?** AI Product Engineer = AI Development + Production Deployment.
 > Infrastructure knowledge is essential for deploying AI systems to production, monitoring costs,
-> and debugging issues. See [INFRASTRUCTURE-TRACK.md](INFRASTRUCTURE-TRACK.md) for details.
+> and debugging issues. See [INFRASTRUCTURE-TRACK.md](../infrastructure/INFRASTRUCTURE-TRACK.md) for details.
 
 ### Deliverable Goals
 - [ ] Functioning learning management agent system
@@ -70,10 +76,10 @@ This project is managed in a separate repository called `ai-pe-learning-agent`.
 ai-pe-learning-agent/
 ├── README.md                    # Project introduction (for portfolio)
 ├── docs/
-│   ├── ARCHITECTURE.md          # System architecture details
-│   ├── DEVELOPMENT.md           # Development log (progress by phase)
-│   ├── LEARNINGS.md             # AI Engineering learning summary
-│   └── API.md                   # Usage and API documentation
+│   # ├── ARCHITECTURE.md          # System architecture details (TODO: Create)
+│   # ├── DEVELOPMENT.md           # Development log (progress by phase) (TODO: Create)
+│   # ├── LEARNINGS.md             # AI Engineering learning summary (TODO: Create)
+│   # └── API.md                   # Usage and API documentation (TODO: Create)
 │
 ├── src/                         # Agent system code
 │   ├── agents/                  # Agent implementations
@@ -355,49 +361,28 @@ learning/**/reviews/
 **Goal**: Understand production infrastructure for AI deployment
 
 **Why First?**
-- Aligns with current VNTG work (immediate value)
+- Immediately applicable to real-world production environments
 - Provides foundation for later AI system deployment
 - Demonstrates production-readiness mindset from day 1
 
-**Learning Topics:**
-- Docker basics: Images, containers, Dockerfile, docker-compose
-- Kubernetes fundamentals: Pods, Deployments, Services
-- Grafana LGTM Stack: Loki (logs), Grafana (visualization), Tempo (traces), Mimir (metrics)
-- OpenTelemetry basics: Instrumentation, exporters
-
-**Tasks:**
-- [ ] **Week 1: Docker + Kubernetes**
-  - Install Docker and minikube
-  - Complete Docker tutorial
-  - Containerize simple NestJS app
-  - Learn kubectl basics (get, describe, logs)
-  - Analyze VNTG docker-compose.yml
-
-- [ ] **Week 2: LGTM Stack**
-  - Setup local LGTM stack with docker-compose
-  - Integrate simple app with OpenTelemetry
-  - Send logs/metrics/traces to LGTM
-  - Create first Grafana dashboard
-  - Document VNTG stack architecture
-
-**Deliverables:**
-- `~/infra-labs/` - Local practice environment
-  - docker-basics/
-  - kubernetes-basics/
-  - lgtm-stack/ (working Grafana + Loki + Tempo + Mimir)
-- `~/Documents/Projects/infra-learning/` - Learning notes
-  - week-01-docker-kubernetes.md
-  - week-02-lgtm-stack.md
-  - vntg-stack-analysis.md
+**Learning Focus:**
+- Docker & Kubernetes basics
+- Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
+- OpenTelemetry fundamentals
+- Production observability patterns
 
 **Success Criteria:**
 - [ ] Can build and run Docker containers confidently
 - [ ] Understand K8s Pod/Deployment/Service concepts
 - [ ] Have working local LGTM stack
 - [ ] Created first Grafana dashboard
-- [ ] Can explain VNTG architecture to teammates
+- [ ] Can explain production observability architecture to peers
 
-**Reference:** [INFRASTRUCTURE-TRACK.md](INFRASTRUCTURE-TRACK.md) - Detailed implementation guide
+**📖 Detailed Guide:** [INFRASTRUCTURE-TRACK.md](../infrastructure/INFRASTRUCTURE-TRACK.md)
+- Week-by-week breakdown
+- Step-by-step tutorials
+- Practice labs setup
+- Company stack integration
 
 ---
 
@@ -902,9 +887,11 @@ Each week includes:
 
 ## 📖 Documentation
 
+<!-- TODO: Create these documents
 - [Architecture](./docs/ARCHITECTURE.md) - Detailed system design
 - [Development Log](./docs/DEVELOPMENT.md) - Development process by Phase
 - [Learnings](./docs/LEARNINGS.md) - Core AI Engineering learnings
+-->
 
 ## 💡 Key Insights
 
@@ -1056,7 +1043,7 @@ A: "Reducing API costs by 70% with Semantic Caching implementation. Detected sim
 - [ ] Setup Python development environment
 - [ ] Issue Claude API key and test
 - [ ] Write `learning/week-01-prompt-engineering/` template
-- [ ] Write Phase 1 detailed design document (docs/DEVELOPMENT.md)
+- [ ] Write Phase 1 detailed design document (docs/DEVELOPMENT.md) <!-- TODO: Create -->
 
 ### Questions to Clarify
 - [ ] How much time can you invest daily?
