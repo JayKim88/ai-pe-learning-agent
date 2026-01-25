@@ -42,6 +42,7 @@ python src/hello_claude.py
 ```
 
 **Expected Result**:
+
 ```
 🤖 Sending message to Claude...
 
@@ -61,12 +62,14 @@ python src/hello_claude.py
 ### Python Not Installed
 
 #### Mac
+
 ```bash
 # Install with Homebrew
 brew install python@3.11
 ```
 
 #### Windows
+
 1. Visit [Python.org](https://www.python.org/downloads/)
 2. Download Python 3.11
 3. During installation, check "Add Python to PATH"!
@@ -74,6 +77,7 @@ brew install python@3.11
 ### Virtual Environment Activation Issues
 
 #### Mac/Linux
+
 ```bash
 # Permission issue
 chmod +x venv/bin/activate
@@ -81,6 +85,7 @@ source venv/bin/activate
 ```
 
 #### Windows (PowerShell)
+
 ```bash
 # May need to change execution policy
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -94,9 +99,11 @@ anthropic.AuthenticationError: Invalid API key
 ```
 
 **Solution**:
+
 1. Verify `.env` file is in project root
 2. Check API key starts with `sk-ant-`
 3. Ensure no quotes around key
+
    ```
    # Correct
    ANTHROPIC_API_KEY=sk-ant-api03-xxx
@@ -122,10 +129,12 @@ pip install -r requirements.txt
 ### 1. Learn Python Basics (Day 1-2)
 
 **Resources**:
+
 - [Python for JavaScript Developers](https://www.valentinog.com/blog/python-for-js/)
 - [Real Python Tutorial](https://realpython.com/python-first-steps/)
 
 **Practice**:
+
 ```python
 # learning/week-00/exercises/basics.py
 # Practice variables, functions, classes
@@ -134,23 +143,27 @@ pip install -r requirements.txt
 ### 2. Get Familiar with AI Ecosystem (Day 3-4)
 
 **Goals**:
+
 - Learn Anthropic SDK usage
 - Data validation with Pydantic
 - Environment variable management
 
 **Practice**:
+
 - Understand and modify `src/hello_claude.py`
 - Experiment with different prompts
 
 ### 3. Mini Project (Day 5-7)
 
 **Project**: Build a CLI chatbot
+
 ```python
 # mini_chatbot.py
 # Implement conversational chatbot
 ```
 
 **Features**:
+
 - Accept user input
 - Send to Claude
 - Display response
@@ -176,11 +189,13 @@ All checked → **Ready for Phase 1!** 🎉
 ### VS Code Setup
 
 **Recommended Extensions**:
+
 - Python (Microsoft)
 - Pylance
 - Python Indent
 
 **Settings**:
+
 ```json
 {
   "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",

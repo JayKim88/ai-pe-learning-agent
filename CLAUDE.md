@@ -15,6 +15,7 @@
 **Current Status:** Phase 0a - Infrastructure Fundamentals
 
 **Learning Progression:**
+
 - Phase 0a: Infrastructure Fundamentals ◄─ **CURRENT**
 - Week 0: Python Basics
 - Phase 1-5: AI Agent Development + Production Deployment
@@ -24,18 +25,22 @@
 ## User Context
 
 ### Learning Approach
+
 **Default assumptions for learners:**
+
 - Coming from web development background (TypeScript/JavaScript common)
 - Practical, hands-on learning preferred
 - Real-world examples over academic theory
 - Production-ready mindset from day 1
 
 **Personalization:**
+
 - Individual user profile stored in `docs/user/PROFILE.md` (gitignored)
 - System adapts to user's specific background and goals
 - Can reference docs/user/PROFILE.md for personalized guidance
 
 ### Learning Preferences (Platform Defaults)
+
 - Practical, hands-on approach
 - Code examples with clear explanations
 - TypeScript/JavaScript comparisons when relevant (common background)
@@ -47,6 +52,7 @@
 ## Target Infrastructure Stack
 
 **Production-Ready AI Systems:**
+
 - **Containers:** Docker, Docker Compose
 - **Orchestration:** Kubernetes
 - **Observability:** Grafana LGTM Stack
@@ -58,6 +64,7 @@
 - **Optional:** Kafka for event streaming
 
 **Why This Stack:**
+
 - Industry-standard for production AI deployment
 - Essential for monitoring LLM costs and performance
 - Distributed tracing for multi-agent debugging
@@ -70,18 +77,21 @@
 ### Goals
 
 **Part 1: Docker + Kubernetes Basics**
+
 - Understand containerization concepts
 - Build and run Docker containers
 - Learn kubectl fundamentals
 - Study production observability patterns
 
 **Part 2: LGTM Stack Integration**
+
 - Setup local Grafana + Loki + Tempo + Mimir
 - Integrate simple app with OpenTelemetry
 - Create first monitoring dashboard
 - Document architecture
 
 ### Deliverables
+
 ```
 ~/infra-labs/                    # Practice environment
 ├── docker-basics/
@@ -94,6 +104,7 @@
 ```
 
 ### Success Criteria
+
 - [ ] Can build/run Docker containers confidently
 - [ ] Understand K8s Pod/Deployment/Service
 - [ ] Have working local LGTM stack
@@ -105,12 +116,14 @@
 ## Tech Stack
 
 ### Current Phase (Infrastructure)
+
 - Docker & Docker Compose
 - Kubernetes (minikube for local)
 - Grafana LGTM Stack
 - OpenTelemetry basics
 
 ### Future Phases (AI Engineering)
+
 - Python 3.11+
 - Claude API (Anthropic SDK)
 - LangGraph (agent orchestration)
@@ -122,7 +135,9 @@
 ## Work Principles
 
 ### 1. Infrastructure Depth: Level 1 Only
+
 **Target:** User level, not DevOps expert
+
 - ✅ Build/run containers, read YAML, use kubectl basics
 - ✅ Understand LGTM architecture, create dashboards
 - ❌ Cluster administration, Helm charts, service mesh
@@ -131,7 +146,9 @@
 **Rationale:** AI PE needs to deploy and monitor, not architect infrastructure.
 
 ### 2. Web Developer Perspective
+
 **Provide comparisons when helpful (common background):**
+
 ```typescript
 // TypeScript/JavaScript
 const doubled = numbers.map(n => n * 2);
@@ -141,6 +158,7 @@ doubled = [n * 2 for n in numbers]  # List comprehension
 ```
 
 **Use familiar analogies for web developers:**
+
 - "Kubernetes Pod is like a package.json for a container"
 - "docker-compose.yml is like a multi-service package.json"
 - "Vector DB is like a search engine for semantic meaning"
@@ -148,6 +166,7 @@ doubled = [n * 2 for n in numbers]  # List comprehension
 **Note:** Check docs/user/PROFILE.md for user's specific background to provide tailored comparisons.
 
 ### 3. Production-Ready Mindset
+
 - Not "just make it work" but "deploy to production"
 - Security considerations (no hardcoded secrets)
 - Resource limits (CPU, memory)
@@ -155,13 +174,16 @@ doubled = [n * 2 for n in numbers]  # List comprehension
 - Cost awareness
 
 ### 4. Documentation as Learning
+
 **All learning must be documented:**
+
 - `learning/` directory is core portfolio value
 - Markdown notes with code examples
 - Before/after comparisons
 - Mistakes and improvements visible
 
 ### 5. Dogfooding
+
 - Use built tools for actual learning management
 - `reviews/` directory proves system works
 - Real usage drives real improvements
@@ -179,6 +201,9 @@ ai-pe-learning-agent/
 │   │   └── GETTING-STARTED.md      # Quick start guide
 │   ├── infrastructure/
 │   │   └── INFRASTRUCTURE-TRACK.md  # Infrastructure deep dive
+│   ├── JDs/
+│   │   ├── JOB-DESCRIPTIONS.md     # JD analysis and patterns
+│   │   └── flank.md                # Individual JD analysis
 │   ├── planning/
 │   │   ├── ROADMAP.md              # Complete learning roadmap
 │   │   └── PROJECT-ORIGIN.md      # Genesis of the project
@@ -210,6 +235,7 @@ ai-pe-learning-agent/
 ```
 
 **Separate Practice Environment:**
+
 ```
 ~/infra-labs/                       # Infrastructure practice
 ├── docker-basics/
@@ -225,18 +251,21 @@ ai-pe-learning-agent/
 ## Communication Style
 
 ### For Infrastructure Tasks
+
 - Explain concepts with web development analogies
 - Compare to web framework patterns when relevant (check docs/user/PROFILE.md)
 - Reference industry-standard production patterns
 - Focus on "user level" depth, not DevOps expert
 
 ### For Python/AI Tasks
+
 - Provide web dev comparisons when relevant (check docs/user/PROFILE.md for specifics)
 - Explain Python idioms (list comprehensions, f-strings, decorators)
 - Reference common web framework patterns when applicable
 - Keep it practical, avoid academic theory
 
 ### For Code Reviews
+
 - Check for production readiness (secrets, resource limits, health checks)
 - Ensure code is approachable for learners (clear comments, explicit over implicit)
 - Suggest documentation improvements
@@ -247,6 +276,7 @@ ai-pe-learning-agent/
 ## Current Priorities
 
 ### Getting Started
+
 1. **Docker Basics**
    - Install Docker
    - Complete official tutorial
@@ -259,6 +289,7 @@ ai-pe-learning-agent/
    - Note questions and insights
 
 ### Progress Through
+
 1. Kubernetes basics (minikube, kubectl)
 2. LGTM stack setup
 3. Full LGTM integration
@@ -271,6 +302,7 @@ ai-pe-learning-agent/
 ## References
 
 **Internal Docs:**
+
 - [ROADMAP.md](docs/planning/ROADMAP.md) - Complete learning plan with all 5 phases
 - [INFRASTRUCTURE-TRACK.md](docs/infrastructure/INFRASTRUCTURE-TRACK.md) - Detailed infrastructure guide
 - [GETTING-STARTED.md](docs/guides/GETTING-STARTED.md) - Python environment setup
@@ -278,11 +310,13 @@ ai-pe-learning-agent/
 - [AGENTS-CONCEPTS.md](docs/reference/AGENTS-CONCEPTS.md) - Project agents vs Claude Code agents distinction
 
 **External Resources (Phase 0a):**
+
 - Docker: https://docs.docker.com/get-started/
 - Kubernetes: https://kubernetes.io/docs/tutorials/kubernetes-basics/
 - LGTM Stack: https://grafana.com/docs/
 
 **External Resources (Future Phases):**
+
 - Python for JS Devs: https://www.valentinog.com/blog/python-for-js/
 - Anthropic Docs: https://docs.anthropic.com/
 - LangGraph: https://python.langchain.com/docs/langgraph
@@ -292,6 +326,7 @@ ai-pe-learning-agent/
 ## Session Expectations
 
 **When starting a session, Claude should:**
+
 1. Recognize current phase (Phase 0a - Infrastructure)
 2. Check docs/user/PROFILE.md for user-specific background and preferences
 3. Use web dev comparisons when helpful (if user has that background)
@@ -301,6 +336,7 @@ ai-pe-learning-agent/
 7. Remember this is a platform for anyone, not just one user
 
 **What NOT to do:**
+
 - ❌ Suggest advanced DevOps patterns (Helm, Istio, etc.)
 - ❌ Dive too deep into K8s internals
 - ❌ Assume specific user background without checking docs/user/PROFILE.md
@@ -312,6 +348,7 @@ ai-pe-learning-agent/
 ## Quick Commands Reference
 
 **Infrastructure Practice:**
+
 ```bash
 # Navigate to practice environment
 cd ~/infra-labs/
@@ -325,6 +362,7 @@ docker-compose up -d
 ```
 
 **This Project:**
+
 ```bash
 # Navigate to project
 cd ~/Documents/Projects/ai-pe-learning-agent/

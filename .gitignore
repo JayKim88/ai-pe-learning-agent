@@ -44,7 +44,8 @@ data/vector_store/*.db
 *.log
 
 # Personal information (excluded from commits)
-docs/user
+# Only exclude PROFILE.md, keep other user docs public
+docs/user/PROFILE.md
 
 # Keep example env
 !.env.example

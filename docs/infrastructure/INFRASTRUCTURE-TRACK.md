@@ -32,6 +32,7 @@ AI Product Engineer (Your Goal):
 ```
 
 **Key Difference:**
+
 - Researcher: "This model has 95% accuracy" (done)
 - Product Engineer: "This model runs on K8s, responds <200ms, costs <$100/month" (start)
 
@@ -54,6 +55,7 @@ AI Product Engineer (Your Goal):
 **Example: Grafana LGTM Metrics Comparison**
 
 **Traditional Web Apps:**
+
 ```
 Mimir: API response time, request rate
 Tempo: HTTP request tracing
@@ -61,6 +63,7 @@ Loki: Error log analysis
 ```
 
 **AI Systems:**
+
 ```
 Mimir: LLM API calls, token usage, cost tracking
 Tempo: Multi-agent workflow tracing (which agent is slow?)
@@ -89,6 +92,7 @@ Preferred:
 ```
 
 **Interview Questions:**
+
 - "LLM costs suddenly doubled. How do you debug?"
   → Grafana: check token usage metrics, Tempo: trace which endpoint
 
@@ -105,6 +109,7 @@ Preferred:
 ## Required Depth: Level 1 (User)
 
 ### Level 1: User (Your Goal) ✅
+
 ```
 Docker:
 ✓ Read and modify Dockerfile
@@ -126,6 +131,7 @@ Grafana LGTM:
 ```
 
 ### Level 2: Operator (Optional)
+
 ```
 Docker:
 - Multi-stage build optimization
@@ -141,6 +147,7 @@ Kubernetes:
 ```
 
 ### Level 3: Architect (Unnecessary)
+
 ```
 - Build K8s clusters from scratch
 - Service mesh (Istio)
@@ -278,6 +285,7 @@ $ code ~/Documents/Projects/infra-learning/production-stack-analysis.md
 ```
 
 **Week 1 Deliverables:**
+
 ```
 ~/infra-labs/
 ├── docker-basics/
@@ -309,8 +317,9 @@ $ touch docker-compose.yml
 ```
 
 **docker-compose.yml (simplified):**
+
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   loki:
@@ -322,8 +331,8 @@ services:
   tempo:
     image: grafana/tempo:latest
     ports:
-      - "3200:3200"   # Tempo HTTP
-      - "4317:4317"   # OTLP gRPC
+      - "3200:3200" # Tempo HTTP
+      - "4317:4317" # OTLP gRPC
     command: -config.file=/etc/tempo/tempo.yaml
 
   mimir:
@@ -344,6 +353,7 @@ services:
 ```
 
 **grafana-datasources.yml:**
+
 ```yaml
 apiVersion: 1
 
@@ -427,6 +437,7 @@ $ curl -u admin:admin http://localhost:3000/api/dashboards/uid/<uid> \
 ```
 
 **Week 2 Deliverables:**
+
 ```
 ~/infra-labs/lgtm-stack/
 ├── docker-compose.yml
@@ -458,12 +469,14 @@ After 2 weeks, you should be able to:
 ## Stage 2: AI Core Focus (6 weeks)
 
 ### Week 0: Python Basics (1 week)
+
 - Follow: `learning/week-00-python-basics/notes.md`
 - Infrastructure: Weekends only (optional, 1-2 hours)
   - Experiment with containerizing Python apps
   - Compare to NestJS Dockerfile
 
 ### Phase 1: Prompt Reviewer (2 weeks)
+
 - Focus: LangGraph, Structured Output, Guardrails
 - Infrastructure integration:
   - Create Dockerfile for Python agent
@@ -471,6 +484,7 @@ After 2 weeks, you should be able to:
   - No LGTM integration yet (keep simple)
 
 ### Phase 2: Code Critic (2 weeks)
+
 - Focus: Multi-agent collaboration
 - Infrastructure integration:
   - docker-compose with multiple agent containers
@@ -478,6 +492,7 @@ After 2 weeks, you should be able to:
   - Still no LGTM (Phase 3)
 
 **Infrastructure Learning: Paused**
+
 - Focus 100% on AI fundamentals
 - Build strong foundation before integration
 
@@ -488,6 +503,7 @@ After 2 weeks, you should be able to:
 ### Phase 3: Vector DB + Observability Basics (2 weeks)
 
 **AI Track:**
+
 - Implement RAG with Vector DB
 - Search accuracy measurement
 
@@ -495,7 +511,7 @@ After 2 weeks, you should be able to:
 
 ```yaml
 # docker-compose.yml for AI system
-version: '3.8'
+version: "3.8"
 
 services:
   prompt-reviewer:
@@ -520,7 +536,7 @@ services:
   alloy:
     image: grafana/alloy:latest
     ports:
-      - "4317:4317"  # OTLP gRPC
+      - "4317:4317" # OTLP gRPC
 
   loki:
     image: grafana/loki:latest
@@ -638,6 +654,7 @@ async def learning_cycle_workflow(state):
 ```
 
 **Tempo Service Graph:**
+
 ```
 Grafana → Explore → Tempo → Service Graph
 
@@ -674,29 +691,29 @@ spec:
         app: prompt-reviewer
     spec:
       containers:
-      - name: agent
-        image: your-registry/prompt-reviewer:latest
-        ports:
-        - containerPort: 8000
-        env:
-        - name: ANTHROPIC_API_KEY
-          valueFrom:
-            secretKeyRef:
-              name: api-keys
-              key: anthropic
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8000
-          initialDelaySeconds: 30
-          periodSeconds: 10
+        - name: agent
+          image: your-registry/prompt-reviewer:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: ANTHROPIC_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: api-keys
+                  key: anthropic
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
 ---
 apiVersion: v1
 kind: Service
@@ -706,8 +723,8 @@ spec:
   selector:
     app: prompt-reviewer
   ports:
-  - port: 80
-    targetPort: 8000
+    - port: 80
+      targetPort: 8000
   type: ClusterIP
 ```
 
@@ -753,6 +770,7 @@ $ curl http://localhost:8000/health
 ### Resume (After Stage 3)
 
 **Before:**
+
 ```
 AI PE Learning Agent (2026.01 - 2026.06)
 - Multi-agent system with LangGraph
@@ -760,6 +778,7 @@ AI PE Learning Agent (2026.01 - 2026.06)
 ```
 
 **After:**
+
 ```
 AI Product Engineer Learning System (2026.01 - 2026.08)
 - Production-ready multi-agent system deployed on Kubernetes
@@ -783,17 +802,20 @@ AI Product Engineer Learning System (2026.01 - 2026.08)
 "I deployed a multi-agent system on Kubernetes with full LGTM observability:
 
 **Deployment:**
+
 - Containerized Python agents with Docker
 - K8s Deployments with resource limits and health checks
 - Secrets management for API keys
 - Service mesh for inter-agent communication
 
 **Monitoring:**
+
 - **Mimir:** Token usage per hour, cost per endpoint
 - **Tempo:** Agent workflow tracing, bottleneck identification
 - **Loki:** Hallucination event logs, user feedback patterns
 
 **Optimization:**
+
 - Semantic Caching: 70% cost reduction
 - Before/After proof via Grafana dashboard
 
@@ -809,6 +831,7 @@ This is the industry-standard observability stack, so I can apply this knowledge
 ### This Weekend (Jan 25-26)
 
 **Saturday (4 hours):**
+
 ```bash
 # 1. Docker basics
 $ brew install --cask docker  # if needed
@@ -826,6 +849,7 @@ $ code ~/Documents/Projects/infra-learning/week-01-docker.md
 ```
 
 **Sunday (4 hours):**
+
 ```bash
 # 1. Containerize NestJS app
 $ nest new docker-practice
@@ -851,6 +875,7 @@ Full LGTM integration + first dashboard
 ### Week 3 (Feb 7)
 
 **Start AI PE Week 0: Python Basics**
+
 - Infrastructure to weekends only
 - Focus shifts to AI
 
@@ -859,6 +884,7 @@ Full LGTM integration + first dashboard
 ## Success Metrics
 
 **Stage 1 (2 weeks):**
+
 - [ ] Confident with Docker commands
 - [ ] Understand K8s core resources
 - [ ] LGTM stack running locally
@@ -866,11 +892,13 @@ Full LGTM integration + first dashboard
 - [ ] Can explain production observability architecture to peers
 
 **Stage 2 (6 weeks):**
+
 - [ ] Python fundamentals solid
 - [ ] 2+ working AI agents
 - [ ] Basic containerization
 
 **Stage 3 (6 weeks):**
+
 - [ ] Full LGTM observability
 - [ ] K8s deployment working
 - [ ] Cost reduction proven with metrics

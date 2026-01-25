@@ -9,6 +9,7 @@
 ## Project Overview
 
 ### Core Idea
+
 "Learning to become an AI Product Engineer together with AI agents"
 
 This project is a meta-learning initiative that builds a multi-agent system to manage the learning process for transitioning to an AI PE role. By creating the tools, you naturally acquire AI engineering capabilities, and the results become your portfolio.
@@ -16,15 +17,18 @@ This project is a meta-learning initiative that builds a multi-agent system to m
 ### Why This Project?
 
 **1. Meta-Learning Effect**
+
 - Building AI agents to become an AI engineer reflects the actual work cycle
 - Directly experience prompt design, agent orchestration, and evaluation system construction
 
 **2. Portfolio Value**
+
 - Not "following tutorials" but solving a real problem (your own learning management)
 - Clear story for "Why did you build this?"
 - Gradual development process all recorded in Git history
 
 **3. Practicality**
+
 - Use and improve the tool daily
 - Immediate iteration based on user feedback (yourself)
 
@@ -33,6 +37,7 @@ This project is a meta-learning initiative that builds a multi-agent system to m
 ### Learning Objectives
 
 **AI Engineering Core:**
+
 - [ ] AI agent design and implementation capabilities
 - [ ] Prompt engineering (System Prompt, Few-shot, Chain-of-Thought)
 - [ ] Agentic workflows (Planning → Execution → Evaluation)
@@ -41,6 +46,7 @@ This project is a meta-learning initiative that builds a multi-agent system to m
 - [ ] Evaluation and quality management system construction
 
 **Infrastructure & Production (NEW ⭐):**
+
 - [ ] Docker containerization and orchestration
 - [ ] Kubernetes deployment and management
 - [ ] Observability with Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
@@ -53,12 +59,14 @@ This project is a meta-learning initiative that builds a multi-agent system to m
 > and debugging issues. See [INFRASTRUCTURE-TRACK.md](../infrastructure/INFRASTRUCTURE-TRACK.md) for details.
 
 ### Deliverable Goals
+
 - [ ] Functioning learning management agent system
 - [ ] GitHub repository (code + docs + learning artifacts)
 - [ ] Technical blog posts (development process and insights)
 - [ ] Portfolio-ready project for resume
 
 ### Success Criteria
+
 - [ ] **Phase 0a Complete**: Understand Docker, K8s, LGTM basics (company stack)
 - [ ] **Phase 1 Complete**: Single feature (prompt reviewer) working and used daily
 - [ ] **Phase 2 Complete**: 2+ agents collaborating
@@ -146,6 +154,7 @@ ai-pe-learning-agent/
 This directory is the key differentiator of the project.
 
 **Structure**:
+
 ```
 learning/
 ├── week-01-prompt-engineering/
@@ -173,44 +182,56 @@ learning/
 ```
 
 **Weekly Template**:
+
 ```markdown
 # Week N: [Topic]
 
 ## Learning Objectives
+
 - [ ] Objective 1
 - [ ] Objective 2
 
 ## Learning Resources
+
 - [Resource title](link)
 - [Resource title](link)
 
 ## Core Concepts
+
 ### Concept 1
+
 Explanation...
 
 ### Concept 2
+
 Explanation...
 
 ## Practice Work
+
 ### Exercise 1: [Title]
+
 - Purpose: ...
 - Code: `exercises/exercise-01.py`
 - Result: ...
 - Learnings: ...
 
 ## Assignments
+
 ### Assignment 1 (Agent-generated)
+
 - Content: `assignments/assignment-01.md`
 - Submission: `assignments/solution-01.py`
 - Review result: `reviews/review-01.json`
 - Improvements: ...
 
 ## Weekly Reflection
+
 - Most challenging:
 - Most interesting:
 - Apply next week:
 
 ## References
+
 - ...
 ```
 
@@ -219,23 +240,28 @@ Explanation...
 Benefits of this structure:
 
 **1. Transparent Learning Process**
+
 - Weekly learning content fully public
 - Mistakes and improvements visible (review-01.json → review-02.json)
 - Shows "growth process" not "perfect results"
 
 **2. Dogfooding Evidence**
+
 - Managing your own learning with agents you built
 - `reviews/` directory proves agents actually work
 
 **3. Real-world Examples**
+
 - When recruiters ask "How does this work?"
 - Show actual files like `learning/week-03-rag-basics/reviews/review-01.json`
 
 **4. Blog Post Material**
+
 - Each week's `notes.md` becomes blog post draft
 - Publish as series like "Week 3: What I Learned Building RAG"
 
 **5. Interview Preparation**
+
 - "Most challenging technical problem?"
   → Reference `learning/week-05-langgraph/notes.md` "Weekly Reflection"
 - "Failure and recovery experience?"
@@ -244,6 +270,7 @@ Benefits of this structure:
 ### .gitignore Considerations
 
 Exclude sensitive information:
+
 ```gitignore
 # Environment variables
 .env
@@ -260,6 +287,7 @@ experiments/failed/
 ```
 
 But make most learning process public:
+
 ```
 # Commit these!
 learning/**/notes.md
@@ -299,27 +327,33 @@ learning/**/reviews/
 ### Agent Role Definitions
 
 #### 1. Curriculum Architect (Planner)
+
 **Responsibility**: Weekly learning goals and reading curation
 **Input**: Overall 6-month roadmap, user's current level
 **Output**: This week's concepts, recommended resources, learning sequence
 
 #### 2. Assignment Generator (Task Creator)
+
 **Responsibility**: Generate practical assignments applying learned theory
 **Input**: This week's learned concepts
 **Output**: Specific coding tasks (e.g., "Build JSON extractor with Pydantic")
 
 #### 3. Code Critic (Code Reviewer)
+
 **Responsibility**: Quality check and feedback on submitted code
 **Input**: User-written code
 **Output**:
+
 - AI Engineering Best Practice compliance
 - Improvement suggestions (prompt injection defense, error handling, token efficiency)
 - Pass/rewrite judgment
 
 #### 4. Progress Tracker (Progress Manager)
+
 **Responsibility**: Save learning history and suggest review schedule
 **Input**: Completed assignments, review feedback
 **Output**:
+
 - Learning progress status
 - Identify weak concepts
 - Items requiring review
@@ -356,29 +390,42 @@ learning/**/reviews/
 
 ## Phase-by-Phase Implementation Plan
 
-### Phase 0a: Infrastructure Fundamentals (2 weeks) ⭐ NEW
+### Phase 0a: Infrastructure Fundamentals (4-8 weeks) ⭐ NEW
+
+**Timeline:** Weeks 1-4 minimum, up to 8 weeks for solid foundation
 
 **Goal**: Understand production infrastructure for AI deployment
 
 **Why First?**
+
 - Immediately applicable to real-world production environments
 - Provides foundation for later AI system deployment
 - Demonstrates production-readiness mindset from day 1
+- Can practice during onboarding period
 
 **Learning Focus:**
-- Docker & Kubernetes basics
+
+- Docker & Kubernetes basics (user level, not DevOps)
 - Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
 - OpenTelemetry fundamentals
 - Production observability patterns
 
+**Time Allocation:**
+- Week 1-2: Docker + K8s basics (weekday 1-2h, weekend 4-8h)
+- Week 3-4: LGTM Stack setup + first dashboard (same pace)
+- Weeks 5-8 (optional): Deepen understanding while starting Python
+
 **Success Criteria:**
+
 - [ ] Can build and run Docker containers confidently
 - [ ] Understand K8s Pod/Deployment/Service concepts
-- [ ] Have working local LGTM stack
+- [ ] Have working local LGTM stack running
 - [ ] Created first Grafana dashboard
 - [ ] Can explain production observability architecture to peers
+- [ ] Learning notes completed: `~/Documents/Projects/infra-learning/`
 
 **📖 Detailed Guide:** [INFRASTRUCTURE-TRACK.md](../infrastructure/INFRASTRUCTURE-TRACK.md)
+
 - Week-by-week breakdown
 - Step-by-step tutorials
 - Practice labs setup
@@ -391,6 +438,7 @@ learning/**/reviews/
 **Goal**: Repository and development environment
 
 **Completed Tasks:**
+
 - [x] Write project planning documents
 - [x] Create Git repository (`ai-pe-learning-agent`)
 - [x] Initialize repository structure
@@ -400,6 +448,7 @@ learning/**/reviews/
 - [x] Create Week 0 Python basics guide
 
 **Deliverables:**
+
 - ✅ Git repository with initial structure
 - ✅ README.md, ROADMAP.md, INFRASTRUCTURE-TRACK.md
 - ✅ learning/week-00-python-basics/notes.md
@@ -407,25 +456,29 @@ learning/**/reviews/
 
 ---
 
-### Phase 1: MVP - Prompt Reviewer (2 weeks)
+### Phase 1: MVP - Prompt Reviewer (2-3 weeks)
+
 **Goal**: Get a single feature working perfectly for actual use
 
 **Core Feature**:
 CLI tool that evaluates prompt quality and suggests improvements
 
 **Tech Stack** (simplified):
+
 - Python 3.11+
 - Claude API (Anthropic SDK)
 - File-based storage (JSON)
 - CLI interface (argparse)
 
 **Learning Topics** (Week 1-2):
+
 - [ ] **Advanced Prompt Patterns**: Few-shot, Chain-of-Thought, ReAct
 - [ ] **Structured Output**: Enforce JSON Schema using Pydantic
 - [ ] **Guardrails**: Auto-retry logic when response format breaks
 - [ ] **JSON Mode vs Function Calling**: Pros/cons and use cases
 
 **Tasks**:
+
 - [ ] Implement `src/agents/prompt_reviewer.py`
 - [ ] Design and document System Prompt
   - Include Few-shot examples
@@ -449,6 +502,7 @@ CLI tool that evaluates prompt quality and suggests improvements
 - [ ] Document real usage cases in `examples/01-review-prompt.md`
 
 **Practice Assignment 0**:
+
 ```bash
 python src/cli.py review-prompt "Summarize this article"
 
@@ -464,29 +518,34 @@ python src/cli.py review-prompt "Summarize this article"
 ```
 
 **Success Criteria**:
+
 - [ ] Review every prompt you write daily with this tool
 - [ ] After 1 week of use, feel actual prompt quality improvement
 - [ ] Accumulate at least 5 review results in `learning/week-01/`
 
 ---
 
-### Phase 2: Add Code Reviewer (2 weeks)
+### Phase 2: Add Code Reviewer (2-3 weeks)
+
 **Goal**: Add second agent to build multi-agent foundation
 
 **Core Feature**:
 Review AI code and suggest Best Practices
 
 **New Technologies**:
+
 - Code parsing (basic AST analysis)
 - State sharing between agents (simple JSON)
 
 **Learning Topics** (Week 3-4):
+
 - [ ] **Validation & Retry Logic**: Auto-recovery design when AI results are wrong
 - [ ] **Hallucination Prevention**: Response validation and fact-checking logic
 - [ ] **Cost Optimization**: Token usage tracking and caching strategies
 - [ ] **Security**: Prompt injection pattern detection and defense
 
 **Tasks**:
+
 - [ ] Implement `src/agents/code_critic.py`
 - [ ] Define review checklist (expanded):
   - **Prompt injection defense**: Check user input sanitization
@@ -506,6 +565,7 @@ Review AI code and suggest Best Practices
 - [ ] Experiment with various validation patterns in `experiments/validation-patterns/`
 
 **Learning Integration**:
+
 ```bash
 # Submit assignment
 python src/cli.py review-code learning/week-02/assignments/solution-01.py
@@ -518,32 +578,38 @@ python src/cli.py review-code learning/week-02/assignments/solution-01.py
 ```
 
 **Success Criteria**:
+
 - [ ] Review every AI code you write with this tool
 - [ ] Receive and improve from "rewrite" feedback at least 3 times
 - [ ] At least 2 failed→success cases in `learning/week-02/reviews/`
 
 ---
 
-### Phase 3: Vector DB Integration (2 weeks)
+### Phase 3: Vector DB Integration (2-3 weeks)
+
 **Goal**: Store learning history and utilize context
 
 **Core Features**:
+
 - Search past learning content
 - Find similar assignments
 - Auto-identify weak concepts
 
 **New Technologies**:
+
 - Supabase Vector (or Chroma)
 - Embedding (OpenAI text-embedding-3-small)
 - Similarity search
 
 **Learning Topics** (Week 5-6):
+
 - [ ] **RAG Pipeline**: Document chunking, embedding, storage, retrieval
 - [ ] **Hybrid Search**: Combine keyword + vector search
 - [ ] **Re-ranking**: Improve accuracy by reordering search results
 - [ ] **Data Cleaning**: Process unstructured data for AI readability
 
 **Tasks**:
+
 - [ ] Setup Vector DB environment
 - [ ] Design learning data structure
   - Metadata: week, topic, difficulty, status
@@ -564,6 +630,7 @@ python src/cli.py review-code learning/week-02/assignments/solution-01.py
 - [ ] Experiment with various chunking strategies in `experiments/chunking-strategies/`
 
 **Learning Integration**:
+
 ```bash
 # Search past learning content
 python src/cli.py search "Content related to RAG"
@@ -581,28 +648,33 @@ python src/cli.py weak-concepts
 ```
 
 **Success Criteria**:
+
 - [ ] Queries like "Show past RAG-related learning" work
 - [ ] Automatically identify 3 weak concepts
 - [ ] Learning history embeddings saved in `data/vector_store/`
 
 ---
 
-### Phase 4: LangGraph Migration + Evaluation System (2 weeks)
+### Phase 4: LangGraph Migration + Evaluation System (2-3 weeks)
+
 **Goal**: Systematize complex workflows with LangGraph and build performance evaluation system
 
 **Core Features**:
+
 - State-based workflows
 - Conditional branching (retry based on evaluation)
 - Circular structure (feedback loops)
 - Automated AI performance evaluation
 
 **New Technologies**:
+
 - LangGraph
 - StateGraph
 - Conditional Edges
 - **LLM-as-a-Judge** (KEY!)
 
 **Learning Topics** (Week 7-8):
+
 - [ ] **LangGraph**: State-based agent orchestration
 - [ ] **Evaluation (Evals)**: Quantitative AI performance measurement
 - [ ] **LLM-as-a-Judge**: Auto-grade lower model responses with upper model
@@ -610,6 +682,7 @@ python src/cli.py weak-concepts
 - [ ] **A/B Testing**: Compare before/after prompt modifications
 
 **Tasks**:
+
 - [ ] Convert existing agents to LangGraph nodes
 - [ ] Design workflow graph
 - [ ] Define state management structure
@@ -632,6 +705,7 @@ python src/cli.py weak-concepts
 - [ ] Apply learned content to actual system
 
 **Success Criteria**:
+
 - [ ] Complex workflows visually represented
 - [ ] Debugging becomes easier
 - [ ] Circular structure (retry logic) works clearly
@@ -639,27 +713,32 @@ python src/cli.py weak-concepts
 
 ---
 
-### Phase 5: Assignment Generator + Optimization + Integration (2 weeks)
+### Phase 5: Assignment Generator + Optimization + Integration (2-3 weeks)
+
 **Goal**: Integrate all 4 agents and optimize costs
 
 **Core Features**:
+
 - Auto assignment generation
 - Full workflow automation
 - Cost optimization (Semantic Caching)
 - Dashboard (optional)
 
 **New Technologies**:
+
 - Streamlit (or Next.js) - optional
 - **Semantic Caching**
 - **Streaming responses**
 
 **Learning Topics** (Week 9-10):
+
 - [ ] **Cost Optimization**: Reduce API costs with Semantic Caching
 - [ ] **UX Optimization**: Improve perceived speed with Streaming
 - [ ] **Multi-Agent Collaboration**: Sequential/parallel execution of multiple agents
 - [ ] **Monitoring**: Track token usage, response time, costs
 
 **Tasks**:
+
 - [ ] Implement `src/agents/assignment_generator.py`
 - [ ] Implement `src/agents/curriculum_architect.py`
 - [ ] **Implement Semantic Caching**:
@@ -687,6 +766,7 @@ python src/cli.py weak-concepts
   - Calculate improvement rate
 
 **Fully Automated Workflow**:
+
 ```bash
 # Start weekly learning
 python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
@@ -702,6 +782,7 @@ python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
 ```
 
 **Success Criteria**:
+
 - [ ] Full cycle automated: "Generate this week's plan" → assignment → review → save
 - [ ] Actually use for at least 4 weeks
 - [ ] 12+ weeks of learning records in `learning/` directory
@@ -713,11 +794,13 @@ python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
 ### Language Strategy
 
 **Python-Centric Approach** (this project):
+
 - **Primary**: Python 3.11+
 - **Reason**: Center of AI ecosystem, optimal for learning tool development
 - **Advantage**: LangChain, LangGraph, most AI libraries prioritize Python
 
 **TypeScript Later** (optional):
+
 - **When**: After Phase 5, when web UI is needed
 - **Purpose**: Next.js, Vercel AI SDK for productization stage
 - **Strategy**: Complete core logic in Python, add TypeScript if needed
@@ -725,6 +808,7 @@ python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
 ### Framework Strategy
 
 **Go Deep on One**:
+
 - **Choice**: LangGraph (optimal for state-based workflows)
 - **Reason**:
   - Supports complex agent orchestration
@@ -735,6 +819,7 @@ python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
   - Selectively use necessary components
 
 ### Essential (Phase 1-2)
+
 - **Language**: Python 3.11+
 - **LLM**: Claude 3.5 Sonnet (Anthropic API)
 - **Storage**: JSON files
@@ -742,6 +827,7 @@ python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
 - **Validation**: Pydantic (Structured Output)
 
 ### Expansion (Phase 3-4)
+
 - **Vector DB**: Supabase Vector or Chroma
 - **Embedding**: OpenAI text-embedding-3-small
 - **Orchestration**: LangGraph
@@ -749,11 +835,13 @@ python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
 - **Evaluation**: LLM-as-a-Judge (GPT-4o)
 
 ### Optional (Phase 5)
+
 - **Frontend**: Streamlit (or Next.js)
 - **Deployment**: Docker, Railway/Render
 - **Monitoring**: LangSmith or Helicone (optional)
 
 ### Development Tools
+
 - **Version Control**: Git + GitHub
 - **Code Quality**: ruff, mypy
 - **Documentation**: Markdown, docstrings
@@ -762,6 +850,7 @@ python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
 ## Expected Learning Outcomes
 
 ### Technical Capabilities
+
 - **AI Engineering Fundamentals**
   - Prompt engineering (System Prompt, Few-shot, Chain-of-Thought)
   - Structured Output design
@@ -788,12 +877,14 @@ python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
   - Circular structures (retry logic)
 
 ### Product Capabilities
+
 - Real problem definition and solution design
 - MVP-first development strategy
 - Gradual feature expansion
 - User feedback integration (you are the user)
 
 ### Portfolio Value
+
 - "Why did you build this?" → Clear motivation
 - "How did you approach it?" → Phase-by-phase evolution
 - "What difficulties?" → Summarized in technical blog
@@ -802,34 +893,42 @@ python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
 ## Risks and Mitigation Strategies
 
 ### Risk 1: Scope Creep
+
 **Problem**: Failing to complete by trying to build perfect system
 
 **Mitigation**:
+
 - Set clear completion criteria per Phase
 - Each Phase independently usable
 - "Works even if not perfect → next stage"
 
 ### Risk 2: Only Focus on Tool Development
+
 **Problem**: Not properly learning AI engineering fundamentals
 
 **Mitigation**:
+
 - 70% of weekly time on concept learning/practice
 - Only 30% on tool development
 - Study related concepts before each Phase
 - Must fill `learning/` directory (no coding without learning)
 
 ### Risk 3: Excessive Tech Stack
+
 **Problem**: Trying to learn too many technologies at once
 
 **Mitigation**:
+
 - Phase 1-2 use minimal technologies only
 - Add new technologies one at a time
 - "Learn when needed" approach
 
 ### Risk 4: Lack of Motivation
+
 **Problem**: Losing interest and giving up midway
 
 **Mitigation**:
+
 - Each Phase produces "actually usable" results
 - Small achievements weekly (completing `learning/week-N/`)
 - Maintain accountability by sharing on technical blog
@@ -854,6 +953,7 @@ Naturally learned prompt engineering, agent orchestration, and evaluation system
 [System diagram]
 
 4 collaborating agents:
+
 - **Curriculum Architect**: Generate weekly learning plans
 - **Assignment Generator**: Auto-generate practice assignments
 - **Code Critic**: Code review based on AI Best Practices
@@ -869,6 +969,7 @@ Built and used this system simultaneously. See 12 weeks of learning records in [
 - ...
 
 Each week includes:
+
 - Learning notes (`notes.md`)
 - Practice code (`exercises/`)
 - Agent-generated assignments (`assignments/`)
@@ -896,6 +997,7 @@ Each week includes:
 ## 💡 Key Insights
 
 What I learned through this project:
+
 - Meta-prompting for automated prompt evaluation
 - Personalized learning recommendations with Vector DB
 - Quality assurance loop with LangGraph's circular structure
@@ -912,6 +1014,7 @@ This project is a portfolio for transitioning to AI Product Engineer career.
 ### Technical Blog Series
 
 **Writing Strategy**:
+
 - **Frequency**: Weekly or biweekly (12+ posts over 6 months)
 - **Format**: Focus on "solving technical challenges" (not simple summaries)
 - **Structure**: Before/After comparison, share failures, quantitative results
@@ -991,6 +1094,7 @@ This project is a portfolio for transitioning to AI Product Engineer career.
 "Multi-agent system project building the learning process itself as an AI system for transitioning to AI Product Engineer"
 
 **Include Quantitative Results** (important!):
+
 - **Users**: Self + 10+ testers (when Phase 5 complete)
 - **Learning Records**: 12 weeks, 50+ assignments, 100+ code reviews
 - **Performance Improvements**:
@@ -1004,6 +1108,7 @@ This project is a portfolio for transitioning to AI Product Engineer career.
 - **Code**: Python 5,000+ lines, test coverage 80%+
 
 **Project Section Example**:
+
 ```
 AI PE Learning Agent (2026.01 - 2026.06)
 - Developed multi-agent system for managing AI learning process
@@ -1037,6 +1142,7 @@ A: "Reducing API costs by 70% with Semantic Caching implementation. Detected sim
 ## Next Steps
 
 ### Immediate Action (This Week)
+
 - [ ] Re-read and revise/supplement this document
 - [ ] Create separate Git repository (`ai-pe-learning-agent`)
 - [ ] Initialize repository structure (create directories)
@@ -1046,6 +1152,7 @@ A: "Reducing API costs by 70% with Semantic Caching implementation. Detected sim
 - [ ] Write Phase 1 detailed design document (docs/DEVELOPMENT.md) <!-- TODO: Create -->
 
 ### Questions to Clarify
+
 - [ ] How much time can you invest daily?
 - [ ] When to set Phase 1 target completion date?
 - [ ] Which platform for technical blog? (Medium, personal blog, velog, etc.)
@@ -1058,15 +1165,23 @@ A: "Reducing API costs by 70% with Semantic Caching implementation. Detected sim
 
 ---
 
-**Last Updated**: 2026-01-18
-**Document Version**: 3.0 (test.md insights integrated)
+**Last Updated**: 2026-01-25
+**Document Version**: 4.0 (6-month timeline integrated)
 **Author**: Jay Kim
+**Timeline**: 6 months (24 weeks)
 
 **Version History**:
-- v3.0 (2026-01-18): Integrated specific technologies and strategies from test.md
+
+- v4.0 (2026-01-25): **6-month timeline integration**
+  - Adjusted phase durations for even distribution (2-3 weeks each)
+  - Phase 0a extended to 4-8 weeks for solid foundation
+  - Added time management guidelines (weekday 1-2h, weekend 4-8h)
+  - Total: 24 weeks with buffer time
+  - See [CAREER-TRANSITION.md](../user/CAREER-TRANSITION.md) for complete plan
+- v3.0 (2026-01-18): Integrated specific technologies and strategies
   - Detailed learning topics per Phase
-  - Added specific technologies like LLM-as-a-Judge, Semantic Caching
-  - Added quantitative performance measurement criteria
+  - Added LLM-as-a-Judge, Semantic Caching
+  - Quantitative performance measurement criteria
   - Enhanced technical blog strategy
 - v2.0 (2026-01-18): Integrated learning artifacts (learning/) directory
 - v1.0 (2026-01-18): Initial project planning
