@@ -6,19 +6,19 @@
 
 ## Project Overview
 
-**Purpose:** Universal learning platform for becoming an AI Product Engineer
+**Purpose:** TypeScript-first AI agent learning platform
 
-**Vision:** Enable anyone to transition to AI PE through an intelligent, self-managing learning agent system.
+**Vision:** Accelerated transition to AI Product Engineer (Agent Pipeline Specialist) by leveraging existing TypeScript expertise.
 
-**Core Concept:** Meta-learning - building AI agents to learn AI engineering. The tool creation process itself becomes the learning journey.
+**Core Concept:** Meta-learning - building AI agents in TypeScript to learn AI engineering. Fast-track agent development, defer infrastructure.
 
-**Current Status:** Phase 0a - Infrastructure Fundamentals
+**Current Status:** Week 0 - TypeScript + AI SDK Setup
 
 **Learning Progression:**
 
-- Phase 0a: Infrastructure Fundamentals ◄─ **CURRENT**
-- Week 0: Python Basics
-- Phase 1-5: AI Agent Development + Production Deployment
+- Week 0: TypeScript + AI SDK Setup ◄─ **CURRENT**
+- Phase 1-5: AI Agent Development (13 weeks)
+- Phase 5b: Infrastructure Learning (optional)
 
 ---
 
@@ -26,144 +26,159 @@
 
 ### Learning Approach
 
-**Default assumptions for learners:**
+**Current User Context:**
 
-- Coming from web development background (TypeScript/JavaScript common)
-- Practical, hands-on learning preferred
-- Real-world examples over academic theory
-- Production-ready mindset from day 1
+- Strong TypeScript/React background (4+ years at VNTG & Bold9)
+- Currently working on AI-powered code generation at VNTG
+- Existing sdd-system project (9-agent TypeScript architecture)
+- 3-month timeline (13 weeks core learning)
+- Target: Agent Pipeline Specialist career positioning
 
 **Personalization:**
 
-- Individual user profile stored in `docs/user/PROFILE.md` (gitignored)
-- System adapts to user's specific background and goals
-- Can reference docs/user/PROFILE.md for personalized guidance
+- User profile in `docs/user/PROFILE.md` (gitignored)
+- TypeScript-first approach (skip Python learning curve)
+- Reference sdd-system patterns when applicable
+- VNTG work synergy with personal project
 
-### Learning Preferences (Platform Defaults)
+### Learning Preferences
 
-- Practical, hands-on approach
-- Code examples with clear explanations
-- TypeScript/JavaScript comparisons when relevant (common background)
-- Real-world production scenarios
-- Progressive difficulty (Level 1 → Level 2 → Level 3)
-
----
-
-## Target Infrastructure Stack
-
-**Production-Ready AI Systems:**
-
-- **Containers:** Docker, Docker Compose
-- **Orchestration:** Kubernetes
-- **Observability:** Grafana LGTM Stack
-  - Loki (logs)
-  - Grafana (visualization)
-  - Tempo (distributed tracing)
-  - Mimir (metrics)
-- **Instrumentation:** OpenTelemetry
-- **Optional:** Kafka for event streaming
-
-**Why This Stack:**
-
-- Industry-standard for production AI deployment
-- Essential for monitoring LLM costs and performance
-- Distributed tracing for multi-agent debugging
-- Scales from local development to production
+- Practical, hands-on TypeScript development
+- Agent orchestration patterns focus
+- Production-ready from day 1
+- Real-world application over theory
+- Quantifiable results and metrics
 
 ---
 
-## Current Phase: Phase 0a (Infrastructure Fundamentals)
+## Target Technology Stack
+
+**Core Stack (TypeScript):**
+
+- **Language:** TypeScript 5+ / Node.js 20+
+- **AI SDK:** Anthropic SDK (`@anthropic-ai/sdk`)
+- **Validation:** Zod (replaces Pydantic)
+- **Vector DB:** Supabase Vector
+- **Monitoring:** LangSmith (replaces LGTM Stack initially)
+- **Orchestration:** Custom (inspired by sdd-system) + LangGraph.js (optional)
+- **CLI:** Commander.js
+- **Testing:** Vitest
+- **Deployment:** Vercel (serverless functions)
+
+**Why TypeScript-First:**
+
+- Leverage existing 4+ years TypeScript expertise
+- Faster learning curve → focus on agent concepts
+- VNTG work experience directly applicable
+- sdd-system patterns can be referenced
+- 3-month timeline (vs 6 months with Python)
+
+**Infrastructure (Optional Phase 5b):**
+
+- Docker & Kubernetes (defer to weeks 14-17)
+- Grafana LGTM Stack (learn when deploying)
+- OpenTelemetry (advanced monitoring)
+
+---
+
+## Current Phase: Week 0 (TypeScript + AI SDK Setup)
 
 ### Goals
 
-**Part 1: Docker + Kubernetes Basics**
+**Setup TypeScript Project:**
 
-- Understand containerization concepts
-- Build and run Docker containers
-- Learn kubectl fundamentals
-- Study production observability patterns
+- Initialize TypeScript + Node.js project
+- Install Anthropic SDK and dependencies
+- Configure tsconfig.json
+- Setup environment variables
+- Run first "Hello Claude" script
 
-**Part 2: LGTM Stack Integration**
+**Quick Start:**
 
-- Setup local Grafana + Loki + Tempo + Mimir
-- Integrate simple app with OpenTelemetry
-- Create first monitoring dashboard
-- Document architecture
+- TypeScript knowledge (already have ✅)
+- Node.js 20+ installed
+- Anthropic API key
+- 1-week optional setup (can skip if confident)
 
 ### Deliverables
 
 ```
-~/infra-labs/                    # Practice environment
-├── docker-basics/
-├── kubernetes-basics/
-└── lgtm-stack/
-
-~/Documents/Projects/infra-learning/  # Learning notes
-├── docker-kubernetes.md
-└── lgtm-stack.md
+ai-pe-learning-agent/
+├── package.json
+├── tsconfig.json
+├── .env
+├── src/
+│   └── hello-claude.ts
+└── learning/
+    └── week-01-anthropic-sdk/
+        └── notes.md
 ```
 
 ### Success Criteria
 
-- [ ] Can build/run Docker containers confidently
-- [ ] Understand K8s Pod/Deployment/Service
-- [ ] Have working local LGTM stack
-- [ ] Created first Grafana dashboard
-- [ ] Can explain production observability architecture
+- [ ] TypeScript project initialized
+- [ ] Anthropic SDK working
+- [ ] `hello-claude.ts` runs successfully
+- [ ] Environment ready for Phase 1
+- [ ] Learning directory structure created
 
 ---
 
 ## Tech Stack
 
-### Current Phase (Infrastructure)
+### Current Phase (Week 0)
 
-- Docker & Docker Compose
-- Kubernetes (minikube for local)
-- Grafana LGTM Stack
-- OpenTelemetry basics
+- TypeScript 5+
+- Node.js 20+
+- Anthropic SDK
+- tsx (TypeScript execution)
+- dotenv (environment variables)
 
-### Future Phases (AI Engineering)
+### Future Phases (Phase 1-5)
 
-- Python 3.11+
-- Claude API (Anthropic SDK)
-- LangGraph (agent orchestration)
-- Vector DB (Supabase/Qdrant)
-- Pydantic (data validation)
+- Zod (validation)
+- Commander.js (CLI)
+- Supabase Vector (Vector DB)
+- OpenAI Embeddings API
+- LangSmith (monitoring)
+- Vitest (testing)
+- Vercel (deployment)
 
 ---
 
 ## Work Principles
 
-### 1. Infrastructure Depth: Level 1 Only
+### 1. TypeScript-First Development
 
-**Target:** User level, not DevOps expert
+**Leverage TypeScript Expertise:**
 
-- ✅ Build/run containers, read YAML, use kubectl basics
-- ✅ Understand LGTM architecture, create dashboards
-- ❌ Cluster administration, Helm charts, service mesh
-- ❌ Advanced Prometheus queries, custom exporters
+- Use TypeScript idioms and patterns
+- Zod for validation (similar to Yup/io-ts)
+- Type-safe agent interfaces
+- Commander.js for CLI (familiar API)
 
-**Rationale:** AI PE needs to deploy and monitor, not architect infrastructure.
+**Reference Existing Projects:**
 
-### 2. Web Developer Perspective
+- VNTG: AI-powered code generation patterns
+- sdd-system: 9-agent architecture for inspiration
+- TypeScript best practices from 4+ years experience
 
-**Provide comparisons when helpful (common background):**
+### 2. Agent Pipeline Focus
 
-```typescript
-// TypeScript/JavaScript
-const doubled = numbers.map(n => n * 2);
+**Target:** Agent orchestration specialist, not infrastructure expert
 
-# Python
-doubled = [n * 2 for n in numbers]  # List comprehension
-```
+- ✅ Agent design patterns, communication protocols
+- ✅ Multi-agent orchestration, state management
+- ✅ RAG implementation, Vector DB integration
+- ✅ Cost optimization, LangSmith monitoring
+- ❌ Deep DevOps (defer to Phase 5b if needed)
+- ❌ Advanced K8s, LGTM Stack (optional later)
 
-**Use familiar analogies for web developers:**
+**Career Positioning:**
 
-- "Kubernetes Pod is like a package.json for a container"
-- "docker-compose.yml is like a multi-service package.json"
-- "Vector DB is like a search engine for semantic meaning"
-
-**Note:** Check docs/user/PROFILE.md for user's specific background to provide tailored comparisons.
+- "Agent Pipeline Specialist" (unique positioning)
+- VNTG + sdd-system + ai-pe-learning-agent synergy
+- 13-week accelerated timeline
 
 ### 3. Production-Ready Mindset
 
@@ -257,12 +272,13 @@ ai-pe-learning-agent/
 - Reference industry-standard production patterns
 - Focus on "user level" depth, not DevOps expert
 
-### For Python/AI Tasks
+### For TypeScript/AI Tasks
 
-- Provide web dev comparisons when relevant (check docs/user/PROFILE.md for specifics)
-- Explain Python idioms (list comprehensions, f-strings, decorators)
-- Reference common web framework patterns when applicable
-- Keep it practical, avoid academic theory
+- Use TypeScript best practices (types, interfaces, generics)
+- Reference web dev patterns when relevant
+- Explain AI concepts with web dev analogies when helpful
+- Keep it practical, focus on agent patterns
+- Reference sdd-system architecture when applicable
 
 ### For Code Reviews
 
@@ -275,27 +291,27 @@ ai-pe-learning-agent/
 
 ## Current Priorities
 
-### Getting Started
+### This Week (Week 0)
 
-1. **Docker Basics**
-   - Install Docker
-   - Complete official tutorial
-   - Containerize simple web app
-   - Create learning notes
+1. **TypeScript Project Setup**
+   - Initialize npm project
+   - Install Anthropic SDK
+   - Configure TypeScript
+   - Create hello-claude.ts
 
-2. **Document Everything**
-   - Write clear explanations
-   - Screenshot key configurations
-   - Note questions and insights
+2. **Environment Configuration**
+   - Setup .env file
+   - Get Anthropic API key
+   - Test API connection
+   - Verify TypeScript compilation
 
-### Progress Through
+### Next 13 Weeks
 
-1. Kubernetes basics (minikube, kubectl)
-2. LGTM stack setup
-3. Full LGTM integration
-4. Simple app with OpenTelemetry
-5. First Grafana dashboard
-6. Document production observability patterns
+1. Phase 1 (Weeks 1-3): Prompt Reviewer agent
+2. Phase 2 (Weeks 4-6): Code Critic + orchestration
+3. Phase 3 (Weeks 7-9): Vector DB + Progress Tracker
+4. Phase 4 (Weeks 10-11): LangSmith + evaluation
+5. Phase 5 (Weeks 12-13): Vercel deployment + portfolio
 
 ---
 
@@ -309,17 +325,18 @@ ai-pe-learning-agent/
 - [PROJECT-ORIGIN.md](docs/planning/PROJECT-ORIGIN.md) - Why this project exists
 - [AGENTS-CONCEPTS.md](docs/reference/AGENTS-CONCEPTS.md) - Project agents vs Claude Code agents distinction
 
-**External Resources (Phase 0a):**
+**External Resources (Week 0):**
 
-- Docker: https://docs.docker.com/get-started/
-- Kubernetes: https://kubernetes.io/docs/tutorials/kubernetes-basics/
-- LGTM Stack: https://grafana.com/docs/
+- Anthropic SDK (TypeScript): https://github.com/anthropics/anthropic-sdk-typescript
+- Anthropic Docs: https://docs.anthropic.com/
+- TypeScript Handbook: https://www.typescriptlang.org/docs/
 
 **External Resources (Future Phases):**
 
-- Python for JS Devs: https://www.valentinog.com/blog/python-for-js/
-- Anthropic Docs: https://docs.anthropic.com/
-- LangGraph: https://python.langchain.com/docs/langgraph
+- Zod Documentation: https://zod.dev/
+- LangSmith Docs: https://docs.smith.langchain.com/
+- Supabase Vector: https://supabase.com/docs/guides/ai/vector-columns
+- LangChain.js: https://js.langchain.com/docs/get_started/introduction
 
 ---
 
@@ -327,65 +344,81 @@ ai-pe-learning-agent/
 
 **When starting a session, Claude should:**
 
-1. Recognize current phase (Phase 0a - Infrastructure)
-2. Check docs/user/PROFILE.md for user-specific background and preferences
-3. Use web dev comparisons when helpful (if user has that background)
-4. Maintain "production-ready" mindset
-5. Encourage documentation in `infra-learning/`
-6. Keep infrastructure depth at Level 1 (user, not expert)
-7. Remember this is a platform for anyone, not just one user
+1. Recognize current phase (Week 0 - TypeScript Setup)
+2. Check docs/user/PROFILE.md for user context (VNTG, sdd-system)
+3. Use TypeScript idioms and patterns
+4. Maintain "production-ready" and "agent pipeline specialist" mindset
+5. Encourage documentation in `learning/` directory
+6. Reference sdd-system patterns when applicable
+7. Focus on agent orchestration, defer infrastructure
 
 **What NOT to do:**
 
-- ❌ Suggest advanced DevOps patterns (Helm, Istio, etc.)
-- ❌ Dive too deep into K8s internals
-- ❌ Assume specific user background without checking docs/user/PROFILE.md
-- ❌ Make project too personalized (keep it universal)
-- ❌ Recommend creating new projects (focus on this one)
+- ❌ Suggest Python or recommend switching to Python
+- ❌ Suggest advanced infrastructure (Docker, K8s) unless user requests Phase 5b
+- ❌ Ignore VNTG work synergy opportunities
+- ❌ Forget the 13-week timeline constraint
+- ❌ Skip documentation in `learning/` directory
 
 ---
 
 ## Quick Commands Reference
 
-**Infrastructure Practice:**
-
-```bash
-# Navigate to practice environment
-cd ~/infra-labs/
-
-# Navigate to learning notes
-cd ~/Documents/Projects/infra-learning/
-
-# Start local LGTM stack (Week 2)
-cd ~/infra-labs/lgtm-stack
-docker-compose up -d
-```
-
-**This Project:**
+**TypeScript Development:**
 
 ```bash
 # Navigate to project
 cd ~/Documents/Projects/ai-pe-learning-agent/
 
-# Python environment (Future phases)
-source venv/bin/activate
-python src/hello_claude.py
+# Run TypeScript files with tsx
+npx tsx src/hello-claude.ts
 
-# Git workflow
+# Install dependencies
+npm install
+
+# Run CLI (future phases)
+npm run cli review-prompt "Your prompt here"
+
+# Test
+npm test
+
+# Build
+npm run build
+```
+
+**Git Workflow:**
+
+```bash
+# Standard workflow
 git add .
-git commit -m "..."
+git commit -m "feat: implement prompt reviewer agent"
 git push
+
+# Learning documentation
+cd learning/week-01-anthropic-sdk/
+# Write notes.md, exercises, reviews
 ```
 
 ---
 
 ## Version Info
 
-**Document Version:** 1.0
+**Document Version:** 2.0 (TypeScript Edition)
 **Created:** 2026-01-18
-**Last Updated:** 2026-01-18
-**Current Phase:** Phase 0a - Infrastructure Fundamentals
-**Next Milestone:** Complete Docker + K8s basics → LGTM Stack integration
+**Last Updated:** 2026-01-27
+**Current Phase:** Week 0 - TypeScript + AI SDK Setup
+**Timeline:** 13 weeks (3 months core learning)
+**Next Milestone:** Complete Week 0 setup → Phase 1 (Prompt Reviewer)
+
+**Version History:**
+
+- v2.0 (2026-01-27): TypeScript-first rewrite
+  - Changed from Python to TypeScript approach
+  - Updated timeline (24 weeks → 13 weeks)
+  - Deferred infrastructure to optional Phase 5b
+  - Added VNTG + sdd-system context
+  - Agent Pipeline Specialist positioning
+- v1.0 (2026-01-18): Original Python-based approach
 
 ---
 

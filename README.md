@@ -1,62 +1,66 @@
 # AI Product Engineer Learning Agent
 
-> Personal learning management system for transitioning to AI Product Engineer through meta-learning
+> TypeScript-first multi-agent system for accelerated AI engineering learning
 
 ## What Makes This Different
 
-**Meta-Learning Approach:** Learn AI engineering by building AI agents that manage your own learning journey. The tool creation process itself becomes the learning experience.
+**TypeScript-First Approach:** Leverage existing TypeScript/React expertise to fast-track AI agent development. Skip Python learning curve, focus on agent concepts.
 
-**Self-Managing System:** AI agents review your work, generate assignments, and track progress - creating a personalized learning experience that you actually use.
+**Meta-Learning:** Learn AI engineering by building AI agents in TypeScript that manage your own learning journey. The tool creation process itself becomes the learning experience.
 
-**Production-Ready from Day 1:** Not just tutorials, but real production deployment skills (Docker, K8s, observability with LGTM Stack).
+**3-Month Timeline:** Accelerated 13-week learning path (vs 6 months), deferring infrastructure to deployment phase.
 
-**Portfolio-Driven:** Every week of learning is documented and becomes part of a public portfolio demonstrating growth and expertise.
+**Agent Pipeline Specialist:** Unique career positioning combining VNTG (AI DevTools) + sdd-system (9-agent architecture) + this project.
+
+**Portfolio-Driven:** Every week of learning documented and portfolio-ready, demonstrating agent orchestration expertise.
 
 ---
 
 ## Project Overview
 
-An intelligent, self-managing learning system built to support my transition from Frontend Engineer to AI Product Engineer over 6 months.
+An intelligent TypeScript-based multi-agent system built to accelerate my transition from Frontend Engineer to AI Product Engineer (Agent Pipeline Specialist) in 3 months.
 
-**Why I Built This:** This project helps me deepen AI engineering skills while creating a production-ready portfolio through hands-on agent development.
+**Why TypeScript:** 4+ years TypeScript/React experience at VNTG & Bold9, current AI-powered code generation work, existing sdd-system 9-agent architecture.
 
-**Current Phase:** Phase 0a - Infrastructure Fundamentals (Week 1 of 24)
-**Timeline:** Jan 2026 - Jun 2026
+**Current Phase:** Week 0 - TypeScript + AI SDK Setup
+**Timeline:** Jan 2026 - Apr 2026 (13 weeks core learning)
 
 ## Tech Stack
 
-**AI Engineering:**
+**Core Stack (TypeScript):**
 
-- Python 3.11+
-- Claude API (Anthropic)
-- LangChain / LangGraph
-- Supabase (Vector DB)
-- Pydantic (Data Validation)
+- TypeScript 5+ / Node.js 20+
+- Anthropic SDK (`@anthropic-ai/sdk`)
+- Zod (validation, replaces Pydantic)
+- LangSmith (monitoring, replaces LGTM Stack)
+- Supabase Vector (Vector DB)
+- Commander.js (CLI)
+- Vitest (testing)
 
-**Infrastructure & Production:**
+**Deployment:**
 
-- Docker & Kubernetes
-- Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
-- OpenTelemetry
-- Kafka (optional, for event streaming)
+- Vercel (serverless functions)
+- Environment variables
+- Production best practices
 
 ## Quick Start
 
 **5-minute setup:**
 
 ```bash
-# 1. Setup environment (detailed guide below)
-python3 -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
+# 1. Initialize TypeScript project
+npm init -y
+npm install @anthropic-ai/sdk commander zod dotenv
+npm install -D typescript @types/node tsx
 
 # 2. Configure API key
 cp .env.example .env  # Then add your ANTHROPIC_API_KEY
 
-# 3. Run first code
-python src/hello_claude.py
+# 3. Run first TypeScript code
+npx tsx src/hello-claude.ts
 ```
 
-**Detailed instructions:** [Getting Started Guide](docs/guides/GETTING-STARTED.md)
+**Detailed instructions:** [ROADMAP.md - Week 0](docs/planning/ROADMAP.md#week-0-typescript--ai-sdk-setup-optional-1-week)
 
 ## Project Structure
 
@@ -80,52 +84,46 @@ ai-pe-learning-agent/
 └── requirements.txt       # Python packages ✅
 ```
 
-## Learning Roadmap (6 Months)
+## Learning Roadmap (13 Weeks)
 
-**Phase 0a: Infrastructure Fundamentals (4-8 weeks) ⭐ CURRENT**
-- Docker & Kubernetes basics (user level)
-- Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
-- Production observability patterns
-- Local lab environment setup
+**Week 0: TypeScript + AI SDK Setup (1 week) ⭐ CURRENT**
+- Initialize TypeScript project
+- Install Anthropic SDK
+- First "Hello Claude" in TypeScript
+- Environment ready for Phase 1
 
-**Week 0: Python Basics (1 week)**
-- TypeScript → Python syntax mapping
-- Virtual environments & package management
-- First Claude API integration
-- Mini chatbot implementation
+**Phase 1: Single Agent - Prompt Reviewer (3 weeks)**
+- TypeScript agent architecture
+- Zod validation schemas
+- CLI tool with Commander.js
+- Production-ready prompt review agent
 
-**Phase 1: Prompt Reviewer (2-3 weeks)**
-- Single agent MVP (actually use it daily)
-- Structured Output & Guardrails
-- Few-shot, Chain-of-Thought patterns
-- 99%+ response consistency
+**Phase 2: Multi-Agent Collaboration - Code Critic (3 weeks)**
+- Second agent (Code Critic)
+- Agent orchestration patterns
+- Sequential and parallel execution
+- Inspired by sdd-system architecture
 
-**Phase 2: Code Critic (2-3 weeks)**
-- Multi-agent collaboration foundation
-- Validation & retry logic
-- AI code best practices enforcement
-- Pass/rewrite judgment system
+**Phase 3: Memory & Context - Progress Tracker (3 weeks)**
+- Vector DB integration (Supabase)
+- RAG implementation
+- Learning history tracking
+- Weak concept identification
 
-**Phase 3: Vector DB + RAG (2-3 weeks)**
-- Learning history management
-- Hybrid Search (BM25 + Vector)
-- Progress tracking and weakness identification
-- Review recommendations
+**Phase 4: Monitoring & Optimization (2 weeks)**
+- LangSmith integration
+- LLM-as-Judge evaluation
+- Cost tracking per agent
+- Quantifiable improvements
 
-**Phase 4: LangGraph + Evaluation (2-3 weeks)**
-- Complex workflow orchestration
-- LLM-as-a-Judge evaluation system
-- Golden Dataset creation
-- A/B testing framework
+**Phase 5: Production & Portfolio (2 weeks)**
+- Vercel deployment
+- README and documentation polish
+- Blog post and demo video
+- Portfolio-ready project
 
-**Phase 5: Production Deployment (2-3 weeks)**
-- K8s deployment with full LGTM observability
-- Cost optimization (Semantic Caching)
-- Production-ready portfolio
-- Blog posts and demo
-
-**Why Infrastructure First?**
-AI Product Engineer = AI Development + Production Deployment. Understanding Docker, K8s, and observability is essential for deploying AI systems to production.
+**Why TypeScript-First?**
+Leverage 4+ years TypeScript expertise to fast-track agent development. Focus on agent concepts, not language learning. Infrastructure (Docker, K8s, LGTM) deferred to optional Phase 5b.
 
 **See detailed plans:**
 
@@ -167,5 +165,6 @@ AI Product Engineer = AI Development + Production Deployment. Understanding Dock
 
 ---
 
-**Last Updated**: 2026-01-25
-**Current Phase**: Phase 0a - Infrastructure Fundamentals
+**Last Updated**: 2026-01-27
+**Current Phase**: Week 0 - TypeScript + AI SDK Setup
+**Approach**: TypeScript-first (13 weeks) - leveraging existing expertise

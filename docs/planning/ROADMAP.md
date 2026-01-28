@@ -1,1187 +1,2165 @@
-# AI Product Engineer Learning Roadmap Project
+# AI Product Engineer Learning Roadmap (TypeScript Edition)
 
-> **Purpose:** Complete 6-month learning plan with phase-by-phase implementation details
-> **For:** Understanding project goals, architecture, and detailed execution plan
-> **See also:** [GETTING-STARTED.md](../guides/GETTING-STARTED.md) for setup, [INFRASTRUCTURE-TRACK.md](../infrastructure/INFRASTRUCTURE-TRACK.md) for deployment
+> **Purpose:** 13-week accelerated learning plan leveraging TypeScript expertise
+> **For:** Agent Pipeline Specialist career positioning
+> **Timeline:** 3 months core learning (13 weeks)
 
 ---
 
-## Project Overview
+## Strategic Overview
 
-### Core Idea
+### Core Philosophy
 
-"Learning to become an AI Product Engineer together with AI agents"
+"Learning to become an AI Product Engineer by building AI agents in TypeScript"
 
-This project is a meta-learning initiative that builds a multi-agent system to manage the learning process for transitioning to an AI PE role. By creating the tools, you naturally acquire AI engineering capabilities, and the results become your portfolio.
+This project leverages your existing TypeScript/React expertise from VNTG to fast-track AI agent development. Instead of learning Python first, we build agents in TypeScript and defer infrastructure to deployment phase.
 
-### Why This Project?
+### Why TypeScript-First?
 
-**1. Meta-Learning Effect**
+**Leverage Existing Expertise:**
+- 4+ years TypeScript/React experience at VNTG & Bold9
+- Current work: AI-powered code generation at VNTG
+- sdd-system project: 9-agent architecture in TypeScript
+- Faster learning curve → more time for agent concepts
 
-- Building AI agents to become an AI engineer reflects the actual work cycle
-- Directly experience prompt design, agent orchestration, and evaluation system construction
+**Timeline Efficiency:**
+- Python approach: 24 weeks (6 months)
+- TypeScript approach: 13 weeks (3 months core)
+- Skip infrastructure basics (learn when deploying)
+- Focus on agent development and orchestration
 
-**2. Portfolio Value**
+**Career Positioning:**
+```
+VNTG (TypeScript AI DevTools)
+    +
+sdd-system (9-agent architecture)
+    +
+ai-pe-learning-agent (Agent Pipeline)
+    =
+Agent Pipeline Specialist
+```
 
-- Not "following tutorials" but solving a real problem (your own learning management)
-- Clear story for "Why did you build this?"
-- Gradual development process all recorded in Git history
+---
 
-**3. Practicality**
+## Revised Timeline: 13 Weeks
 
-- Use and improve the tool daily
-- Immediate iteration based on user feedback (yourself)
+### Learning Structure
 
-## Project Goals
+**Each Phase: 2 weeks learning + 1 week implementation**
 
-### Learning Objectives
+- Weeks 1-2: Learning concepts, exercises, theory
+- Week 3: Implementation, integration, testing
+- Continuous documentation in `learning/` directory
 
-**AI Engineering Core:**
+**Weekly Time Commitment:**
+- Weekdays: 1-2 hours (learning, reading, exercises)
+- Weekends: 4-8 hours (implementation, documentation)
+- Total: 10-15 hours/week
 
-- [ ] AI agent design and implementation capabilities
-- [ ] Prompt engineering (System Prompt, Few-shot, Chain-of-Thought)
-- [ ] Agentic workflows (Planning → Execution → Evaluation)
-- [ ] Complex state management with LangGraph
-- [ ] Context management with Vector DB
-- [ ] Evaluation and quality management system construction
+### Phase Breakdown
 
-**Infrastructure & Production (NEW ⭐):**
+| Phase | Duration | Focus | Deliverable |
+|-------|----------|-------|-------------|
+| Week 0 (Optional) | 1 week | TypeScript + AI SDK setup | Hello Claude in TypeScript |
+| Phase 1 | 3 weeks | Single Agent | Prompt Reviewer CLI tool |
+| Phase 2 | 3 weeks | Multi-Agent Collaboration | Code Critic + Orchestration |
+| Phase 3 | 3 weeks | Memory & Context | Progress Tracker + Vector DB |
+| Phase 4 | 2 weeks | Monitoring & Evaluation | LangSmith + LLM-as-Judge |
+| Phase 5 | 2 weeks | Deployment & Portfolio | Vercel + Documentation |
+| **Total** | **13 weeks** | | **Production-ready portfolio** |
 
-- [ ] Docker containerization and orchestration
-- [ ] Kubernetes deployment and management
-- [ ] Observability with Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
-- [ ] Distributed tracing for multi-agent systems
-- [ ] Cost monitoring and optimization
-- [ ] Production debugging and troubleshooting
+### Extended Timeline (Optional)
 
-> **Why Infrastructure?** AI Product Engineer = AI Development + Production Deployment.
-> Infrastructure knowledge is essential for deploying AI systems to production, monitoring costs,
-> and debugging issues. See [INFRASTRUCTURE-TRACK.md](../infrastructure/INFRASTRUCTURE-TRACK.md) for details.
+**Phase 5b: Advanced Infrastructure (Weeks 14-17)**
+- Docker, Kubernetes, LGTM Stack
+- Agent deployment to K8s
+- Full observability setup
 
-### Deliverable Goals
+**Phase 6: Market Fit (Weeks 18-24)**
+- Blog posts (3+)
+- Resume polishing
+- Job applications (10+)
+- Interview preparation
 
-- [ ] Functioning learning management agent system
-- [ ] GitHub repository (code + docs + learning artifacts)
-- [ ] Technical blog posts (development process and insights)
-- [ ] Portfolio-ready project for resume
+---
 
-### Success Criteria
+## Technology Stack
 
-- [ ] **Phase 0a Complete**: Understand Docker, K8s, LGTM basics (company stack)
-- [ ] **Phase 1 Complete**: Single feature (prompt reviewer) working and used daily
-- [ ] **Phase 2 Complete**: 2+ agents collaborating
-- [ ] **Phase 3 Complete**: Learning history tracking with Vector DB + Basic observability
-- [ ] **Phase 5 Complete**: AI agents deployed on Kubernetes with full LGTM monitoring
-- [ ] **Final**: Production-ready system used for 3+ months with measurable results
+### Core Stack (TypeScript)
 
-## Repository Structure (Separate Repository)
+**Language & Runtime:**
+- TypeScript 5+
+- Node.js 20+
+- tsx (TypeScript execution)
 
-This project is managed in a separate repository called `ai-pe-learning-agent`.
+**AI & LLM:**
+- Anthropic SDK (`@anthropic-ai/sdk`)
+- Zod (validation, replaces Pydantic)
+- LangSmith (monitoring)
 
-### Overall Structure
+**Data & Storage:**
+- Supabase Vector (or Pinecone)
+- OpenAI Embeddings API
+- JSON files (initial storage)
+
+**Orchestration:**
+- Custom orchestration (inspired by sdd-system)
+- LangGraph.js (if needed in Phase 4)
+
+**Deployment:**
+- Vercel (serverless functions)
+- Environment variables
+- Production best practices
+
+**Development Tools:**
+- Commander.js (CLI)
+- Vitest (testing)
+- Prettier + ESLint (code quality)
+
+### Key Dependencies
+
+```json
+{
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0",
+    "commander": "^12.0.0",
+    "zod": "^3.22.0",
+    "dotenv": "^16.4.0",
+    "langsmith": "^0.1.0",
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.2.0",
+    "prettier": "^3.2.0",
+    "eslint": "^8.56.0"
+  }
+}
+```
+
+### Stack Comparison
+
+| Aspect | Python Approach | TypeScript Approach |
+|--------|----------------|---------------------|
+| Language | Python 3.11+ | TypeScript 5+ |
+| Timeline | 24 weeks (6 months) | 13 weeks (3 months) |
+| Infrastructure | Phase 0a (weeks 1-4) | Phase 5b (optional) |
+| Validation | Pydantic | Zod |
+| Orchestration | LangGraph | Custom (sdd-system inspired) |
+| Monitoring | LGTM Stack | LangSmith |
+| Deployment | Kubernetes | Vercel |
+| Vector DB | Chroma/Qdrant | Supabase Vector |
+
+---
+
+## Project Structure
 
 ```
 ai-pe-learning-agent/
-├── README.md                    # Project introduction (for portfolio)
-├── docs/
-│   # ├── ARCHITECTURE.md          # System architecture details (TODO: Create)
-│   # ├── DEVELOPMENT.md           # Development log (progress by phase) (TODO: Create)
-│   # ├── LEARNINGS.md             # AI Engineering learning summary (TODO: Create)
-│   # └── API.md                   # Usage and API documentation (TODO: Create)
+├── src/
+│   ├── agents/
+│   │   ├── base-agent.ts           # Base agent class
+│   │   ├── prompt-reviewer.ts      # Phase 1
+│   │   ├── code-critic.ts          # Phase 2
+│   │   └── progress-tracker.ts     # Phase 3
+│   ├── orchestration/
+│   │   ├── sequential.ts           # Sequential execution
+│   │   └── parallel.ts             # Parallel execution
+│   ├── vector-db/
+│   │   ├── client.ts               # Vector DB client
+│   │   ├── embeddings.ts           # Embedding generation
+│   │   └── search.ts               # Similarity search
+│   ├── monitoring/
+│   │   └── langsmith.ts            # LangSmith integration
+│   ├── utils/
+│   │   ├── anthropic.ts            # Anthropic SDK wrapper
+│   │   └── validation.ts           # Zod schemas
+│   └── cli.ts                      # CLI interface
 │
-├── src/                         # Agent system code
-│   ├── agents/                  # Agent implementations
-│   │   ├── prompt_reviewer.py
-│   │   ├── code_critic.py
-│   │   ├── assignment_generator.py
-│   │   └── progress_tracker.py
-│   ├── workflows/               # LangGraph workflows
-│   │   ├── review_workflow.py
-│   │   └── learning_cycle.py
-│   ├── vector_db/               # Vector DB management
-│   │   ├── embeddings.py
-│   │   └── storage.py
-│   ├── utils/                   # Utilities
-│   └── cli.py                   # CLI interface
-│
-├── learning/                    # 🌟 Learning artifacts (CORE!)
-│   ├── week-01-prompt-engineering/
-│   │   ├── notes.md             # Learning notes
-│   │   ├── exercises/           # Practice code
-│   │   │   ├── exercise-01.py
-│   │   │   └── exercise-02.py
-│   │   ├── assignments/         # Agent-generated assignments
-│   │   │   └── assignment-01.md
-│   │   └── reviews/             # Code review results
-│   │       └── review-01.json
-│   │
-│   ├── week-02-structured-output/
+├── learning/
+│   ├── week-01-anthropic-sdk/
 │   │   ├── notes.md
 │   │   ├── exercises/
-│   │   └── ...
-│   │
-│   ├── week-03-rag-basics/
-│   ├── week-04-agents/
-│   └── ...
+│   │   │   ├── basic-chat.ts
+│   │   │   └── structured-output.ts
+│   │   └── reviews/
+│   ├── week-02-prompt-patterns/
+│   │   ├── notes.md
+│   │   ├── exercises/
+│   │   │   ├── few-shot.ts
+│   │   │   └── chain-of-thought.ts
+│   │   └── reviews/
+│   └── week-03-prompt-reviewer/
+│       ├── notes.md
+│       ├── implementation/
+│       └── reviews/
 │
-├── experiments/                 # Experiments and prototypes
-│   ├── prompt-variations/       # Prompt A/B testing
-│   ├── evaluation-metrics/      # Evaluation metric experiments
-│   └── langgraph-poc/           # LangGraph learning POC
+├── tests/
+│   ├── agents/
+│   │   ├── prompt-reviewer.test.ts
+│   │   └── code-critic.test.ts
+│   └── utils/
+│       └── validation.test.ts
 │
-├── data/                        # Agent system data
-│   ├── vector_store/            # Vector DB storage
-│   ├── learning_history.json   # Learning history
-│   └── evaluations/             # Evaluation results
-│
-├── tests/                       # Tests
-│   ├── test_agents.py
-│   └── test_workflows.py
-│
-├── examples/                    # Usage examples
-│   ├── 01-review-prompt.md
-│   ├── 02-review-code.md
-│   └── 03-weekly-plan.md
-│
-├── .env.example                 # Environment variable template
-├── requirements.txt             # Python dependencies
-├── pyproject.toml               # Poetry configuration
-└── .gitignore
+├── package.json
+├── tsconfig.json
+├── .env.example
+├── README.md
+└── CLAUDE.md
 ```
-
-### Core: `learning/` Directory
-
-This directory is the key differentiator of the project.
-
-**Structure**:
-
-```
-learning/
-├── week-01-prompt-engineering/
-│   ├── notes.md                 # Learning notes
-│   │   # - Core concepts summary
-│   │   # - Reading material summaries
-│   │   # - Personal insights
-│   │
-│   ├── exercises/               # Self-written code
-│   │   ├── basic_prompt.py      # Basic prompt practice
-│   │   ├── few_shot.py          # Few-shot learning
-│   │   └── chain_of_thought.py  # CoT practice
-│   │
-│   ├── assignments/             # Agent-generated assignments
-│   │   ├── assignment-01.md     # "Build JSON extractor with Pydantic"
-│   │   └── solution-01.py       # Submitted solution
-│   │
-│   └── reviews/                 # Code Critic agent review results
-│       ├── review-01.json       # First submission (failed)
-│       ├── review-02.json       # Resubmission (passed)
-│       └── final-feedback.md    # Final feedback summary
-│
-├── week-02-structured-output/
-│   └── ...
-```
-
-**Weekly Template**:
-
-```markdown
-# Week N: [Topic]
-
-## Learning Objectives
-
-- [ ] Objective 1
-- [ ] Objective 2
-
-## Learning Resources
-
-- [Resource title](link)
-- [Resource title](link)
-
-## Core Concepts
-
-### Concept 1
-
-Explanation...
-
-### Concept 2
-
-Explanation...
-
-## Practice Work
-
-### Exercise 1: [Title]
-
-- Purpose: ...
-- Code: `exercises/exercise-01.py`
-- Result: ...
-- Learnings: ...
-
-## Assignments
-
-### Assignment 1 (Agent-generated)
-
-- Content: `assignments/assignment-01.md`
-- Submission: `assignments/solution-01.py`
-- Review result: `reviews/review-01.json`
-- Improvements: ...
-
-## Weekly Reflection
-
-- Most challenging:
-- Most interesting:
-- Apply next week:
-
-## References
-
-- ...
-```
-
-### Portfolio Value
-
-Benefits of this structure:
-
-**1. Transparent Learning Process**
-
-- Weekly learning content fully public
-- Mistakes and improvements visible (review-01.json → review-02.json)
-- Shows "growth process" not "perfect results"
-
-**2. Dogfooding Evidence**
-
-- Managing your own learning with agents you built
-- `reviews/` directory proves agents actually work
-
-**3. Real-world Examples**
-
-- When recruiters ask "How does this work?"
-- Show actual files like `learning/week-03-rag-basics/reviews/review-01.json`
-
-**4. Blog Post Material**
-
-- Each week's `notes.md` becomes blog post draft
-- Publish as series like "Week 3: What I Learned Building RAG"
-
-**5. Interview Preparation**
-
-- "Most challenging technical problem?"
-  → Reference `learning/week-05-langgraph/notes.md` "Weekly Reflection"
-- "Failure and recovery experience?"
-  → Show failed → improved → passed cases from `reviews/` directory
-
-### .gitignore Considerations
-
-Exclude sensitive information:
-
-```gitignore
-# Environment variables
-.env
-
-# Data containing API keys
-data/vector_store/*.db
-data/learning_history.json
-
-# Private notes (if you don't want to share)
-learning/**/*private*.md
-
-# Failed experiments (optional)
-experiments/failed/
-```
-
-But make most learning process public:
-
-```
-# Commit these!
-learning/**/notes.md
-learning/**/exercises/
-learning/**/assignments/
-learning/**/reviews/
-```
-
-## System Architecture
-
-### Overall Vision: Multi-Agent Learning Management System
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   AI PE Roadmap Agent                         │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
-│  │ Curriculum   │  │  Assignment  │  │    Code      │       │
-│  │  Architect   │  │  Generator   │  │   Critic     │       │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘       │
-│         │                 │                 │                │
-│         └─────────────────┼─────────────────┘                │
-│                           │                                  │
-│                  ┌────────▼─────────┐                        │
-│                  │    Progress      │                        │
-│                  │    Tracker       │                        │
-│                  └──────────────────┘                        │
-│                           │                                  │
-│                  ┌────────▼─────────┐                        │
-│                  │   Vector DB      │                        │
-│                  │ (Learning Log)   │                        │
-│                  └──────────────────┘                        │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Agent Role Definitions
-
-#### 1. Curriculum Architect (Planner)
-
-**Responsibility**: Weekly learning goals and reading curation
-**Input**: Overall 6-month roadmap, user's current level
-**Output**: This week's concepts, recommended resources, learning sequence
-
-#### 2. Assignment Generator (Task Creator)
-
-**Responsibility**: Generate practical assignments applying learned theory
-**Input**: This week's learned concepts
-**Output**: Specific coding tasks (e.g., "Build JSON extractor with Pydantic")
-
-#### 3. Code Critic (Code Reviewer)
-
-**Responsibility**: Quality check and feedback on submitted code
-**Input**: User-written code
-**Output**:
-
-- AI Engineering Best Practice compliance
-- Improvement suggestions (prompt injection defense, error handling, token efficiency)
-- Pass/rewrite judgment
-
-#### 4. Progress Tracker (Progress Manager)
-
-**Responsibility**: Save learning history and suggest review schedule
-**Input**: Completed assignments, review feedback
-**Output**:
-
-- Learning progress status
-- Identify weak concepts
-- Items requiring review
-
-### Agentic Workflow
-
-```
-1. [Planning Phase]
-   - Curriculum Architect: Select this week's learning keywords (e.g., RAG)
-   - Output: Generate learning/week-N-[topic]/notes.md template
-
-2. [Learning Phase]
-   - User: Study materials and write notes.md
-   - User: Write practice code in exercises/ directory
-
-3. [Assignment Phase]
-   - Assignment Generator: Create assignment
-   - Output: learning/week-N/assignments/assignment-01.md
-
-4. [Submission Phase]
-   - User: Write assignments/solution-01.py
-
-5. [Evaluation Loop]
-   - Code Critic: Analyze code and provide feedback
-   - Output: reviews/review-01.json
-   - IF low quality → Request rewrite (review-02.json)
-   - ELSE → Pass
-
-6. [Memory Logging]
-   - Progress Tracker: Save learning results to Vector DB
-   - Output: Update data/learning_history.json
-   - Reflect in next week's plan
-```
-
-## Phase-by-Phase Implementation Plan
-
-### Phase 0a: Infrastructure Fundamentals (4-8 weeks) ⭐ NEW
-
-**Timeline:** Weeks 1-4 minimum, up to 8 weeks for solid foundation
-
-**Goal**: Understand production infrastructure for AI deployment
-
-**Why First?**
-
-- Immediately applicable to real-world production environments
-- Provides foundation for later AI system deployment
-- Demonstrates production-readiness mindset from day 1
-- Can practice during onboarding period
-
-**Learning Focus:**
-
-- Docker & Kubernetes basics (user level, not DevOps)
-- Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
-- OpenTelemetry fundamentals
-- Production observability patterns
-
-**Time Allocation:**
-- Week 1-2: Docker + K8s basics (weekday 1-2h, weekend 4-8h)
-- Week 3-4: LGTM Stack setup + first dashboard (same pace)
-- Weeks 5-8 (optional): Deepen understanding while starting Python
-
-**Success Criteria:**
-
-- [ ] Can build and run Docker containers confidently
-- [ ] Understand K8s Pod/Deployment/Service concepts
-- [ ] Have working local LGTM stack running
-- [ ] Created first Grafana dashboard
-- [ ] Can explain production observability architecture to peers
-- [ ] Learning notes completed: `~/Documents/Projects/infra-learning/`
-
-**📖 Detailed Guide:** [INFRASTRUCTURE-TRACK.md](../infrastructure/INFRASTRUCTURE-TRACK.md)
-
-- Week-by-week breakdown
-- Step-by-step tutorials
-- Practice labs setup
-- Company stack integration
 
 ---
 
-### Phase 0b: Project Setup (Completed ✅)
+## Week 0: TypeScript + AI SDK Setup (Optional, 1 week)
 
-**Goal**: Repository and development environment
+### Goal
 
-**Completed Tasks:**
+Quick environment setup and first AI interaction in TypeScript.
 
-- [x] Write project planning documents
-- [x] Create Git repository (`ai-pe-learning-agent`)
-- [x] Initialize repository structure
-- [x] Decide tech stack (Python, LangGraph, Claude API)
-- [x] Create documentation (README, ROADMAP, GETTING-STARTED)
-- [x] Setup learning directory structure
-- [x] Create Week 0 Python basics guide
+### Prerequisites
 
-**Deliverables:**
+- Node.js 20+ installed
+- TypeScript knowledge (already have)
+- Anthropic API key
 
-- ✅ Git repository with initial structure
-- ✅ README.md, ROADMAP.md, INFRASTRUCTURE-TRACK.md
-- ✅ learning/week-00-python-basics/notes.md
-- ✅ src/hello_claude.py example
+### Setup Tasks
 
----
-
-### Phase 1: MVP - Prompt Reviewer (2-3 weeks)
-
-**Goal**: Get a single feature working perfectly for actual use
-
-**Core Feature**:
-CLI tool that evaluates prompt quality and suggests improvements
-
-**Tech Stack** (simplified):
-
-- Python 3.11+
-- Claude API (Anthropic SDK)
-- File-based storage (JSON)
-- CLI interface (argparse)
-
-**Learning Topics** (Week 1-2):
-
-- [ ] **Advanced Prompt Patterns**: Few-shot, Chain-of-Thought, ReAct
-- [ ] **Structured Output**: Enforce JSON Schema using Pydantic
-- [ ] **Guardrails**: Auto-retry logic when response format breaks
-- [ ] **JSON Mode vs Function Calling**: Pros/cons and use cases
-
-**Tasks**:
-
-- [ ] Implement `src/agents/prompt_reviewer.py`
-- [ ] Design and document System Prompt
-  - Include Few-shot examples
-  - Chain-of-Thought induction strategy
-- [ ] Define Structured Output (JSON) response structure
-  - Validate responses with Pydantic models
-- [ ] Implement Guardrails
-  - Auto-retry on format deviation (max 3 times)
-  - Error handling and logging
-- [ ] Implement CLI interface (`src/cli.py`)
-- [ ] Establish evaluation criteria:
-  - Clarity (1-10 score)
-  - Hallucination risk (1-10 score)
-  - Improvement suggestions (specific text)
-- [ ] Test: Validate with 10 diverse prompts
-- [ ] Write README (usage, examples)
-- [ ] Write practice code in `learning/week-01/exercises/`
-  - `few_shot.py`: Few-shot learning practice
-  - `chain_of_thought.py`: CoT pattern practice
-  - `react_pattern.py`: ReAct pattern practice
-- [ ] Document real usage cases in `examples/01-review-prompt.md`
-
-**Practice Assignment 0**:
+**1. Initialize TypeScript Project**
 
 ```bash
-python src/cli.py review-prompt "Summarize this article"
+# Create project
+mkdir ai-pe-learning-agent
+cd ai-pe-learning-agent
 
-# Example output:
-# {
-#   "clarity_score": 3,
-#   "hallucination_risk": 7,
-#   "feedback": "Prompt is too vague. 'this article' is unclear.",
-#   "improved_version": "Summarize the 3 main arguments from the following article, each in 1-2 sentences: [article content]"
-# }
+# Initialize package.json
+npm init -y
 
-# Save this result to learning/week-01/reviews/review-01.json
+# Install dependencies
+npm install @anthropic-ai/sdk commander zod dotenv
+npm install -D typescript @types/node tsx prettier eslint
+
+# Initialize TypeScript
+npx tsc --init
 ```
 
-**Success Criteria**:
+**2. Configure TypeScript**
 
-- [ ] Review every prompt you write daily with this tool
-- [ ] After 1 week of use, feel actual prompt quality improvement
-- [ ] Accumulate at least 5 review results in `learning/week-01/`
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
+**3. Setup Environment**
+
+```bash
+# .env
+ANTHROPIC_API_KEY=your-key-here
+```
+
+**4. First Script: Hello Claude**
+
+```typescript
+// src/hello-claude.ts
+import Anthropic from "@anthropic-ai/sdk";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+async function main() {
+  const client = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY,
+  });
+
+  const message = await client.messages.create({
+    model: "claude-3-5-sonnet-20241022",
+    max_tokens: 1024,
+    messages: [
+      { role: "user", content: "Hello, Claude! Introduce yourself in one sentence." }
+    ],
+  });
+
+  console.log(message.content[0].text);
+}
+
+main();
+```
+
+**5. Run**
+
+```bash
+# Add to package.json scripts
+"scripts": {
+  "dev": "tsx src/hello-claude.ts"
+}
+
+# Run
+npm run dev
+```
+
+### Success Criteria
+
+- [ ] TypeScript project initialized
+- [ ] Anthropic SDK installed and configured
+- [ ] `hello-claude.ts` runs successfully
+- [ ] API response received and printed
+- [ ] Basic environment ready for Phase 1
 
 ---
 
-### Phase 2: Add Code Reviewer (2-3 weeks)
+## Phase 1: Single Agent - Prompt Reviewer (3 weeks)
 
-**Goal**: Add second agent to build multi-agent foundation
+### Timeline
 
-**Core Feature**:
-Review AI code and suggest Best Practices
+- **Weeks 1-2:** Learning (Prompt engineering, Anthropic SDK, Zod)
+- **Week 3:** Implementation (Build Prompt Reviewer agent)
 
-**New Technologies**:
+### Goal
 
-- Code parsing (basic AST analysis)
-- State sharing between agents (simple JSON)
+Build a production-ready CLI tool that reviews prompt quality and suggests improvements. Use it daily to improve your own prompts.
 
-**Learning Topics** (Week 3-4):
+### Why This Agent First?
 
-- [ ] **Validation & Retry Logic**: Auto-recovery design when AI results are wrong
-- [ ] **Hallucination Prevention**: Response validation and fact-checking logic
-- [ ] **Cost Optimization**: Token usage tracking and caching strategies
-- [ ] **Security**: Prompt injection pattern detection and defense
+- **Foundation:** Establishes base agent architecture
+- **Practical:** Immediately useful for improving prompts
+- **Simple:** Single agent, no orchestration complexity
+- **Portfolio:** Shows prompt engineering depth
 
-**Tasks**:
+### Learning Topics (Weeks 1-2)
 
-- [ ] Implement `src/agents/code_critic.py`
-- [ ] Define review checklist (expanded):
-  - **Prompt injection defense**: Check user input sanitization
-  - **Error handling**: try-except structure, meaningful error messages
-  - **Validation & Retry**: Auto-retry logic on failure
-  - **Hallucination prevention**: Response validation mechanism
-  - **Token efficiency**: Remove unnecessary prompt duplication
-  - **API call optimization**: Caching, rate limiting
-  - **Guardrails**: Format deviation prevention logic
-- [ ] Integrate prompt reviewer and code reviewer
-  - Example: "Review the prompt used in this code too"
-- [ ] Pass/rewrite judgment logic
-  - Score by severity (Critical/Important/Beneficial)
-  - Pass criteria: 0 Critical, ≤ 2 Important
-- [ ] Create `learning/week-02-structured-output/` directory
-- [ ] Document assignment and review cycle
-- [ ] Experiment with various validation patterns in `experiments/validation-patterns/`
+#### Week 1: Anthropic SDK Fundamentals
 
-**Learning Integration**:
+**Core Concepts:**
+- Anthropic SDK API structure
+- Messages API vs legacy Completions
+- Streaming vs non-streaming responses
+- Token counting and costs
+- Error handling and retries
 
-```bash
-# Submit assignment
-python src/cli.py review-code learning/week-02/assignments/solution-01.py
+**Exercises:**
 
-# Review result saved
-# → learning/week-02/reviews/review-01.json
+```typescript
+// learning/week-01-anthropic-sdk/exercises/basic-chat.ts
+// 1. Basic chat completion
+// 2. Multi-turn conversation
+// 3. System prompt usage
+// 4. Token counting
 
-# If failed
-# → learning/week-02/reviews/review-02.json created
+// learning/week-01-anthropic-sdk/exercises/structured-output.ts
+// 1. JSON mode responses
+// 2. Zod schema validation
+// 3. Error handling for invalid JSON
+// 4. Retry logic
 ```
 
-**Success Criteria**:
+**Resources:**
+- [Anthropic SDK Docs](https://docs.anthropic.com/en/api/client-sdks)
+- [Prompt Engineering Guide](https://docs.anthropic.com/en/docs/prompt-engineering)
 
-- [ ] Review every AI code you write with this tool
-- [ ] Receive and improve from "rewrite" feedback at least 3 times
-- [ ] At least 2 failed→success cases in `learning/week-02/reviews/`
+#### Week 2: Prompt Engineering Patterns
 
----
+**Core Concepts:**
+- System prompts and roles
+- Few-shot learning examples
+- Chain-of-Thought prompting
+- Structured outputs with Zod
+- Prompt evaluation criteria
 
-### Phase 3: Vector DB Integration (2-3 weeks)
+**Exercises:**
 
-**Goal**: Store learning history and utilize context
+```typescript
+// learning/week-02-prompt-patterns/exercises/few-shot.ts
+// 1. Few-shot classification
+// 2. Few-shot text generation
+// 3. Dynamic few-shot selection
 
-**Core Features**:
+// learning/week-02-prompt-patterns/exercises/chain-of-thought.ts
+// 1. CoT reasoning
+// 2. Step-by-step problem solving
+// 3. CoT + JSON output
 
-- Search past learning content
-- Find similar assignments
-- Auto-identify weak concepts
+// learning/week-02-prompt-patterns/exercises/prompt-evaluation.ts
+// 1. Define evaluation criteria
+// 2. Score prompt quality
+// 3. Generate improvements
+```
 
-**New Technologies**:
+**Key Learnings:**
+- Clarity vs specificity tradeoff
+- Hallucination risk factors
+- Token efficiency techniques
+- Prompt injection defense basics
 
-- Supabase Vector (or Chroma)
-- Embedding (OpenAI text-embedding-3-small)
-- Similarity search
+### Implementation (Week 3)
 
-**Learning Topics** (Week 5-6):
+#### Architecture
 
-- [ ] **RAG Pipeline**: Document chunking, embedding, storage, retrieval
-- [ ] **Hybrid Search**: Combine keyword + vector search
-- [ ] **Re-ranking**: Improve accuracy by reordering search results
-- [ ] **Data Cleaning**: Process unstructured data for AI readability
+```typescript
+// src/agents/base-agent.ts
+export abstract class BaseAgent {
+  constructor(protected client: Anthropic) {}
 
-**Tasks**:
+  abstract execute(input: unknown): Promise<unknown>;
 
-- [ ] Setup Vector DB environment
-- [ ] Design learning data structure
-  - Metadata: week, topic, difficulty, status
-  - Text: notes, code, reviews
-- [ ] Implement `src/vector_db/embeddings.py`
-  - Chunking strategy (semantic chunking)
-  - Embedding generation and caching
-- [ ] Implement `src/vector_db/search.py`
-  - **Hybrid Search**: BM25 (keyword) + Vector (semantic similarity)
-  - **Re-ranking**: Cross-encoder reordering
-  - Filter search results (using metadata)
-- [ ] Implement `src/agents/progress_tracker.py`
-- [ ] Review recommendation feature
-  - Time-based: After 1 day, 1 week, 1 month
-  - Weakness-based: Prioritize failed assignments
-- [ ] Learn RAG in `learning/week-03-rag-basics/`
-- [ ] Save learned content to Vector DB
-- [ ] Experiment with various chunking strategies in `experiments/chunking-strategies/`
+  protected async callClaude(params: MessageCreateParams) {
+    // Common Claude API logic
+  }
+}
 
-**Learning Integration**:
+// src/agents/prompt-reviewer.ts
+import { z } from "zod";
+
+const ReviewSchema = z.object({
+  clarity_score: z.number().min(1).max(10),
+  hallucination_risk: z.number().min(1).max(10),
+  specificity_score: z.number().min(1).max(10),
+  issues: z.array(z.string()),
+  suggestions: z.array(z.string()),
+  improved_version: z.string(),
+});
+
+type Review = z.infer<typeof ReviewSchema>;
+
+export class PromptReviewer extends BaseAgent {
+  async execute(prompt: string): Promise<Review> {
+    const systemPrompt = `You are an expert prompt engineer...`;
+
+    const response = await this.callClaude({
+      system: systemPrompt,
+      messages: [{ role: "user", content: prompt }],
+    });
+
+    // Parse and validate response
+    return ReviewSchema.parse(JSON.parse(response));
+  }
+}
+```
+
+#### CLI Interface
+
+```typescript
+// src/cli.ts
+import { Command } from "commander";
+import { PromptReviewer } from "./agents/prompt-reviewer";
+
+const program = new Command();
+
+program
+  .name("ai-pe-agent")
+  .description("AI Product Engineer learning agent system")
+  .version("1.0.0");
+
+program
+  .command("review-prompt")
+  .argument("<prompt>", "Prompt to review")
+  .option("-o, --output <file>", "Save review to file")
+  .action(async (prompt, options) => {
+    const reviewer = new PromptReviewer(anthropicClient);
+    const review = await reviewer.execute(prompt);
+
+    console.log(JSON.stringify(review, null, 2));
+
+    if (options.output) {
+      await fs.writeFile(options.output, JSON.stringify(review, null, 2));
+    }
+  });
+
+program.parse();
+```
+
+### Tasks (Week 3)
+
+- [ ] Implement `BaseAgent` class
+- [ ] Implement `PromptReviewer` agent
+- [ ] Design system prompt with few-shot examples
+- [ ] Create Zod validation schemas
+- [ ] Implement CLI interface with Commander.js
+- [ ] Add error handling and retries
+- [ ] Write tests (Vitest)
+- [ ] Document usage in README
+- [ ] Create `learning/week-03-prompt-reviewer/notes.md`
+
+### Evaluation Criteria
+
+**PromptReviewer should assess:**
+
+1. **Clarity (1-10):** Is the prompt clear and unambiguous?
+2. **Specificity (1-10):** Does it specify format, constraints, examples?
+3. **Hallucination Risk (1-10):** Could it lead to made-up information?
+4. **Issues:** List specific problems (vague language, missing constraints, etc.)
+5. **Suggestions:** Actionable improvements
+6. **Improved Version:** Rewritten prompt addressing all issues
+
+### Usage Example
 
 ```bash
-# Search past learning content
-python src/cli.py search "Content related to RAG"
+# Review a prompt
+npm run cli review-prompt "Summarize this article"
 
 # Output:
-# Week 3: RAG Basics (similarity: 0.95)
-# Week 5: Vector DB Integration (similarity: 0.87)
+{
+  "clarity_score": 3,
+  "specificity_score": 2,
+  "hallucination_risk": 7,
+  "issues": [
+    "Vague reference: 'this article' is not defined",
+    "No output format specified",
+    "No length constraint"
+  ],
+  "suggestions": [
+    "Provide the article content or context",
+    "Specify desired summary length",
+    "Define output format (bullet points, paragraph, etc.)"
+  ],
+  "improved_version": "Summarize the following article in 3 bullet points, each 1-2 sentences: [article content here]"
+}
+
+# Save review
+npm run cli review-prompt "Write unit tests" -o learning/week-03/reviews/review-01.json
+```
+
+### Success Criteria
+
+- [ ] CLI tool runs successfully
+- [ ] Reviews your own prompts daily (minimum 5 reviews)
+- [ ] Clear improvement in prompt quality (subjective)
+- [ ] Reviews saved to `learning/week-03/reviews/`
+- [ ] Documentation complete in `learning/week-03/notes.md`
+- [ ] Base agent architecture reusable for Phase 2
+
+---
+
+## Phase 2: Multi-Agent Collaboration - Code Critic (3 weeks)
+
+### Timeline
+
+- **Weeks 4-5:** Learning (Multi-agent patterns, sdd-system analysis)
+- **Week 6:** Implementation (Code Critic + orchestration)
+
+### Goal
+
+Build a second agent that reviews AI-generated code, and orchestrate both agents together. Establish foundation for multi-agent systems.
+
+### sdd-system Reference
+
+**Study Your Existing Project:**
+
+```
+/path/to/sdd-system/
+├── src/
+│   ├── commands/        # Command pattern (orchestrator)
+│   ├── agents/          # 9 specialized agents
+│   ├── skills/          # Reusable skills
+│   └── checkpoint/      # State management
+```
+
+**Key Patterns to Study:**
+- How commands delegate to agents
+- Agent-to-agent communication
+- Shared state management (checkpoint system)
+- Parallel execution patterns
+- Error handling across agents
+
+**Apply to This Project:**
+- Command pattern → Orchestration layer
+- Agent communication → Context passing
+- Checkpoint → Shared state between agents
+- Skills → Reusable utilities
+
+### Learning Topics (Weeks 4-5)
+
+#### Week 4: Multi-Agent Patterns
+
+**Core Concepts:**
+- Agent communication protocols
+- Sequential vs parallel execution
+- State sharing between agents
+- Error handling in multi-agent systems
+- Agent specialization
+
+**Exercises:**
+
+```typescript
+// learning/week-04-multi-agent/exercises/agent-communication.ts
+// 1. Pass context between 2 agents
+// 2. Sequential execution: Agent A → Agent B
+// 3. Share state via JSON
+// 4. Error propagation
+
+// learning/week-04-multi-agent/exercises/parallel-execution.ts
+// 1. Run 2 agents in parallel with Promise.all
+// 2. Combine results from parallel agents
+// 3. Handle partial failures
+```
+
+**Study Tasks:**
+- [ ] Read sdd-system command pattern
+- [ ] Analyze agent-to-agent communication
+- [ ] Understand checkpoint/state management
+- [ ] Document patterns in `learning/week-04/notes.md`
+
+#### Week 5: Code Review Patterns
+
+**Core Concepts:**
+- AI code best practices
+- Security vulnerabilities (prompt injection, XSS)
+- Code quality metrics
+- Pass/rewrite judgment logic
+- Automated validation
+
+**Exercises:**
+
+```typescript
+// learning/week-05-code-review/exercises/validation.ts
+// 1. Detect prompt injection vulnerabilities
+// 2. Check error handling patterns
+// 3. Validate retry logic
+// 4. Token efficiency analysis
+
+// learning/week-05-code-review/exercises/judgment.ts
+// 1. Severity classification (Critical/Important/Beneficial)
+// 2. Pass/rewrite criteria
+// 3. Improvement suggestions
+```
+
+**Review Checklist Design:**
+- **Security:** Prompt injection, input sanitization, API key handling
+- **Error Handling:** Try-catch, meaningful errors, retry logic
+- **Validation:** Response validation, format checking, guardrails
+- **Efficiency:** Token optimization, caching, rate limiting
+- **Quality:** Code structure, readability, TypeScript types
+
+### Implementation (Week 6)
+
+#### Code Critic Agent
+
+```typescript
+// src/agents/code-critic.ts
+import { z } from "zod";
+
+const IssueSchema = z.object({
+  severity: z.enum(["critical", "important", "beneficial"]),
+  category: z.enum(["security", "error-handling", "efficiency", "quality"]),
+  description: z.string(),
+  location: z.string().optional(), // Line number or function name
+  suggestion: z.string(),
+});
+
+const CodeReviewSchema = z.object({
+  overall_score: z.number().min(0).max(100),
+  issues: z.array(IssueSchema),
+  strengths: z.array(z.string()),
+  judgment: z.enum(["pass", "rewrite"]),
+  summary: z.string(),
+});
+
+type CodeReview = z.infer<typeof CodeReviewSchema>;
+
+export class CodeCritic extends BaseAgent {
+  async execute(code: string, context?: string): Promise<CodeReview> {
+    const systemPrompt = `You are an expert code reviewer specializing in AI-generated code...`;
+
+    const userPrompt = `
+Review the following TypeScript code:
+
+\`\`\`typescript
+${code}
+\`\`\`
+
+${context ? `Context: ${context}` : ""}
+
+Evaluate for: Security, Error Handling, Efficiency, Quality
+Provide judgment: pass (0 critical, ≤2 important) or rewrite
+`;
+
+    const response = await this.callClaude({
+      system: systemPrompt,
+      messages: [{ role: "user", content: userPrompt }],
+    });
+
+    return CodeReviewSchema.parse(JSON.parse(response));
+  }
+}
+```
+
+#### Orchestration Layer
+
+```typescript
+// src/orchestration/sequential.ts
+export class SequentialOrchestrator {
+  async execute<T>(agents: BaseAgent[], input: T): Promise<unknown[]> {
+    const results = [];
+    let currentInput = input;
+
+    for (const agent of agents) {
+      const result = await agent.execute(currentInput);
+      results.push(result);
+      currentInput = result; // Pass output to next agent
+    }
+
+    return results;
+  }
+}
+
+// src/orchestration/parallel.ts
+export class ParallelOrchestrator {
+  async execute<T>(agents: BaseAgent[], input: T): Promise<unknown[]> {
+    const promises = agents.map(agent => agent.execute(input));
+    return Promise.all(promises);
+  }
+}
+```
+
+#### Combined Workflow
+
+```typescript
+// src/workflows/code-review-workflow.ts
+export class CodeReviewWorkflow {
+  constructor(
+    private promptReviewer: PromptReviewer,
+    private codeCritic: CodeCritic,
+    private orchestrator: SequentialOrchestrator
+  ) {}
+
+  async execute(code: string) {
+    // 1. Extract prompts from code
+    const prompts = this.extractPrompts(code);
+
+    // 2. Review prompts
+    const promptReviews = await Promise.all(
+      prompts.map(p => this.promptReviewer.execute(p))
+    );
+
+    // 3. Review code (with prompt review context)
+    const codeReview = await this.codeCritic.execute(
+      code,
+      JSON.stringify(promptReviews)
+    );
+
+    return {
+      prompt_reviews: promptReviews,
+      code_review: codeReview,
+    };
+  }
+
+  private extractPrompts(code: string): string[] {
+    // Extract system prompts and user messages from code
+    // Simple regex or AST parsing
+    return [];
+  }
+}
+```
+
+### Tasks (Week 6)
+
+- [ ] Implement `CodeCritic` agent
+- [ ] Design code review checklist
+- [ ] Implement sequential orchestrator
+- [ ] Implement parallel orchestrator
+- [ ] Create `CodeReviewWorkflow`
+- [ ] Update CLI to support code review
+- [ ] Add tests for orchestration
+- [ ] Document multi-agent patterns
+- [ ] Test with your own code
+- [ ] Save reviews to `learning/week-06/reviews/`
+
+### CLI Updates
+
+```bash
+# Review code file
+npm run cli review-code src/agents/prompt-reviewer.ts
+
+# Review with prompt analysis
+npm run cli review-code-full src/agents/prompt-reviewer.ts
+
+# Output:
+{
+  "prompt_reviews": [...],
+  "code_review": {
+    "overall_score": 75,
+    "issues": [
+      {
+        "severity": "important",
+        "category": "error-handling",
+        "description": "Missing retry logic for API failures",
+        "suggestion": "Add exponential backoff retry"
+      }
+    ],
+    "judgment": "rewrite",
+    "summary": "Code has good structure but needs better error handling."
+  }
+}
+```
+
+### Success Criteria
+
+- [ ] Both agents work independently
+- [ ] Agents work together in workflow
+- [ ] Sequential orchestration works
+- [ ] Review your own code with CodeCritic (minimum 3 reviews)
+- [ ] At least 1 "rewrite" → "pass" improvement cycle
+- [ ] Multi-agent patterns documented in `learning/week-06/notes.md`
+- [ ] Foundation ready for Phase 3 (Vector DB integration)
+
+---
+
+## Phase 3: Memory & Context - Progress Tracker (3 weeks)
+
+### Timeline
+
+- **Weeks 7-8:** Learning (Vector DB, RAG, embeddings)
+- **Week 9:** Implementation (Progress Tracker with vector memory)
+
+### Goal
+
+Add persistent memory to your agent system using Vector DB. Track learning history, find similar past learnings, identify weak concepts.
+
+### Why Vector DB?
+
+- **Context Retrieval:** Find relevant past learnings
+- **Pattern Recognition:** Identify recurring mistakes
+- **Personalized Recommendations:** Suggest what to review
+- **Portfolio Value:** Demonstrates RAG implementation
+
+### Learning Topics (Weeks 7-8)
+
+#### Week 7: Vector DB Fundamentals
+
+**Core Concepts:**
+- Vector embeddings and semantic similarity
+- Vector databases (Supabase Vector, Pinecone)
+- Similarity search (cosine, euclidean)
+- Chunking strategies
+- Metadata filtering
+
+**Exercises:**
+
+```typescript
+// learning/week-07-vector-db/exercises/embeddings.ts
+// 1. Generate embeddings with OpenAI
+// 2. Calculate cosine similarity
+// 3. Find similar texts
+// 4. Experiment with different embedding models
+
+// learning/week-07-vector-db/exercises/supabase-vector.ts
+// 1. Setup Supabase project
+// 2. Create vector table
+// 3. Insert embeddings
+// 4. Query similar vectors
+// 5. Filter by metadata
+```
+
+**Resources:**
+- [Supabase Vector Guide](https://supabase.com/docs/guides/ai/vector-columns)
+- [OpenAI Embeddings](https://platform.openai.com/docs/guides/embeddings)
+
+#### Week 8: RAG Patterns
+
+**Core Concepts:**
+- Retrieval-Augmented Generation (RAG)
+- Hybrid search (keyword + vector)
+- Re-ranking strategies
+- Context window optimization
+- Chunking for optimal retrieval
+
+**Exercises:**
+
+```typescript
+// learning/week-08-rag/exercises/retrieval.ts
+// 1. Implement semantic search
+// 2. Implement keyword search (BM25)
+// 3. Combine results (hybrid search)
+// 4. Re-rank with cross-encoder
+
+// learning/week-08-rag/exercises/context-injection.ts
+// 1. Retrieve relevant context
+// 2. Inject into prompt
+// 3. Optimize context length
+// 4. Handle context overflow
+```
+
+**Key Learnings:**
+- When to use vector vs keyword search
+- Chunking size tradeoffs (too small vs too large)
+- Metadata design for filtering
+- Cost optimization (caching embeddings)
+
+### Implementation (Week 9)
+
+#### Vector DB Setup
+
+```typescript
+// src/vector-db/client.ts
+import { createClient } from "@supabase/supabase-js";
+
+export class VectorDBClient {
+  private client;
+
+  constructor() {
+    this.client = createClient(
+      process.env.SUPABASE_URL!,
+      process.env.SUPABASE_KEY!
+    );
+  }
+
+  async insert(content: string, metadata: Record<string, any>, embedding: number[]) {
+    return this.client
+      .from("learning_history")
+      .insert({
+        content,
+        metadata,
+        embedding,
+      });
+  }
+
+  async search(queryEmbedding: number[], limit = 5, filters?: Record<string, any>) {
+    // Vector similarity search
+    let query = this.client
+      .rpc("match_learning_history", {
+        query_embedding: queryEmbedding,
+        match_count: limit,
+      });
+
+    // Apply metadata filters
+    if (filters) {
+      Object.entries(filters).forEach(([key, value]) => {
+        query = query.filter(`metadata->>${key}`, "eq", value);
+      });
+    }
+
+    return query;
+  }
+}
+```
+
+#### Embeddings Service
+
+```typescript
+// src/vector-db/embeddings.ts
+import OpenAI from "openai";
+
+export class EmbeddingService {
+  private openai: OpenAI;
+  private cache: Map<string, number[]> = new Map();
+
+  constructor() {
+    this.openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+
+  async generateEmbedding(text: string): Promise<number[]> {
+    // Check cache first
+    if (this.cache.has(text)) {
+      return this.cache.get(text)!;
+    }
+
+    const response = await this.openai.embeddings.create({
+      model: "text-embedding-3-small",
+      input: text,
+    });
+
+    const embedding = response.data[0].embedding;
+
+    // Cache for future use
+    this.cache.set(text, embedding);
+
+    return embedding;
+  }
+
+  async batchEmbeddings(texts: string[]): Promise<number[][]> {
+    // OpenAI allows batch embeddings
+    const response = await this.openai.embeddings.create({
+      model: "text-embedding-3-small",
+      input: texts,
+    });
+
+    return response.data.map(d => d.embedding);
+  }
+}
+```
+
+#### Progress Tracker Agent
+
+```typescript
+// src/agents/progress-tracker.ts
+import { z } from "zod";
+
+const LearningEntrySchema = z.object({
+  week: z.number(),
+  topic: z.string(),
+  content: z.string(),
+  review: z.object({
+    score: z.number(),
+    passed: z.boolean(),
+  }).optional(),
+  timestamp: z.date(),
+});
+
+const WeakConceptSchema = z.object({
+  concept: z.string(),
+  failure_count: z.number(),
+  last_failed: z.date(),
+  related_entries: z.array(z.string()),
+});
+
+export class ProgressTracker extends BaseAgent {
+  constructor(
+    client: Anthropic,
+    private vectorDB: VectorDBClient,
+    private embeddings: EmbeddingService
+  ) {
+    super(client);
+  }
+
+  async saveEntry(entry: LearningEntry) {
+    const embedding = await this.embeddings.generateEmbedding(
+      `${entry.topic}: ${entry.content}`
+    );
+
+    await this.vectorDB.insert(entry.content, {
+      week: entry.week,
+      topic: entry.topic,
+      passed: entry.review?.passed,
+    }, embedding);
+  }
+
+  async searchHistory(query: string, limit = 5) {
+    const queryEmbedding = await this.embeddings.generateEmbedding(query);
+    return this.vectorDB.search(queryEmbedding, limit);
+  }
+
+  async identifyWeakConcepts(): Promise<WeakConcept[]> {
+    // Query vector DB for failed reviews
+    const failedEntries = await this.vectorDB.search(
+      [], // Empty query for all
+      100,
+      { passed: false }
+    );
+
+    // Use Claude to analyze patterns
+    const analysisPrompt = `
+Analyze these failed learning attempts and identify weak concepts:
+
+${JSON.stringify(failedEntries, null, 2)}
+
+Return a list of concepts that appear frequently in failures.
+`;
+
+    const response = await this.callClaude({
+      system: "You are a learning analytics expert.",
+      messages: [{ role: "user", content: analysisPrompt }],
+    });
+
+    // Parse and return weak concepts
+    return JSON.parse(response);
+  }
+
+  async suggestReview(): Promise<string[]> {
+    // Time-based review: content older than 1 week
+    // Weakness-based: failed concepts
+    // Spaced repetition: 1 day, 1 week, 1 month
+
+    const weakConcepts = await this.identifyWeakConcepts();
+    return weakConcepts.map(c => c.concept);
+  }
+}
+```
+
+### Tasks (Week 9)
+
+- [ ] Setup Supabase project and vector table
+- [ ] Implement `VectorDBClient`
+- [ ] Implement `EmbeddingService` with caching
+- [ ] Implement `ProgressTracker` agent
+- [ ] Design learning entry schema
+- [ ] Implement search history feature
+- [ ] Implement weak concept identification
+- [ ] Implement review suggestions
+- [ ] Update CLI for progress tracking
+- [ ] Migrate existing reviews to Vector DB
+- [ ] Test semantic search accuracy
+- [ ] Document RAG patterns in `learning/week-09/notes.md`
+
+### CLI Updates
+
+```bash
+# Save learning entry
+npm run cli save-entry --week 9 --topic "Vector DB" --content "Learned about embeddings..."
+
+# Search history
+npm run cli search-history "prompt engineering techniques"
+
+# Output:
+[
+  {
+    "week": 2,
+    "topic": "Prompt Patterns",
+    "content": "Studied few-shot and chain-of-thought...",
+    "similarity": 0.89
+  },
+  {
+    "week": 1,
+    "topic": "Anthropic SDK",
+    "content": "System prompts are crucial for...",
+    "similarity": 0.76
+  }
+]
 
 # Identify weak concepts
-python src/cli.py weak-concepts
+npm run cli weak-concepts
 
 # Output:
-# - Prompt injection defense (2/5 assignments failed)
-# - Error handling (1/3 reviews mentioned)
+[
+  {
+    "concept": "Error handling in agents",
+    "failure_count": 3,
+    "last_failed": "2026-02-15",
+    "suggestion": "Review error handling patterns in week-05"
+  },
+  {
+    "concept": "Prompt injection defense",
+    "failure_count": 2,
+    "last_failed": "2026-02-10",
+    "suggestion": "Study security best practices"
+  }
+]
+
+# Get review suggestions
+npm run cli suggest-review
+
+# Output:
+[
+  "Review 'Error handling in agents' (3 failures)",
+  "Review 'Vector DB chunking' (last seen 7 days ago)",
+  "Review 'Few-shot examples' (spaced repetition due)"
+]
 ```
 
-**Success Criteria**:
+### Success Criteria
 
-- [ ] Queries like "Show past RAG-related learning" work
-- [ ] Automatically identify 3 weak concepts
-- [ ] Learning history embeddings saved in `data/vector_store/`
-
----
-
-### Phase 4: LangGraph Migration + Evaluation System (2-3 weeks)
-
-**Goal**: Systematize complex workflows with LangGraph and build performance evaluation system
-
-**Core Features**:
-
-- State-based workflows
-- Conditional branching (retry based on evaluation)
-- Circular structure (feedback loops)
-- Automated AI performance evaluation
-
-**New Technologies**:
-
-- LangGraph
-- StateGraph
-- Conditional Edges
-- **LLM-as-a-Judge** (KEY!)
-
-**Learning Topics** (Week 7-8):
-
-- [ ] **LangGraph**: State-based agent orchestration
-- [ ] **Evaluation (Evals)**: Quantitative AI performance measurement
-- [ ] **LLM-as-a-Judge**: Auto-grade lower model responses with upper model
-- [ ] **Golden Dataset**: Build reference points for good responses
-- [ ] **A/B Testing**: Compare before/after prompt modifications
-
-**Tasks**:
-
-- [ ] Convert existing agents to LangGraph nodes
-- [ ] Design workflow graph
-- [ ] Define state management structure
-- [ ] Implement evaluation loop
-- [ ] Implement `src/workflows/learning_cycle.py`
-- [ ] **Implement LLM-as-a-Judge system**:
-  - [ ] Create `src/evaluation/judge.py`
-  - [ ] Use GPT-4o as Judge to evaluate Claude responses
-  - [ ] Evaluation criteria: Accuracy, relevance, completeness, clarity
-  - [ ] Scoring (1-10 points) and improvement suggestions
-- [ ] **Build Golden Dataset**:
-  - [ ] `data/evaluations/golden_dataset.json`
-  - [ ] 10+ excellent prompt-response pairs
-  - [ ] Failure cases and improvement examples
-- [ ] **A/B Testing Framework**:
-  - [ ] Prompt version management
-  - [ ] Auto performance comparison (before/after)
-  - [ ] Result visualization (simple table format)
-- [ ] Learn LangGraph in `learning/week-04-langgraph/`
-- [ ] Apply learned content to actual system
-
-**Success Criteria**:
-
-- [ ] Complex workflows visually represented
-- [ ] Debugging becomes easier
-- [ ] Circular structure (retry logic) works clearly
-- [ ] **Can prove performance improvement numerically** (e.g., accuracy 70% → 85%)
+- [ ] Vector DB setup complete (Supabase)
+- [ ] Embeddings generated and stored
+- [ ] Semantic search works accurately
+- [ ] Weak concepts identified from your actual reviews
+- [ ] Review suggestions relevant and helpful
+- [ ] All past learning entries migrated to Vector DB
+- [ ] RAG patterns documented
+- [ ] Foundation ready for Phase 4 (LangSmith + Evaluation)
 
 ---
 
-### Phase 5: Assignment Generator + Optimization + Integration (2-3 weeks)
+## Phase 4: Monitoring & Optimization (2 weeks)
 
-**Goal**: Integrate all 4 agents and optimize costs
+### Timeline
 
-**Core Features**:
+- **Week 10:** Learning (LangSmith, evaluation patterns)
+- **Week 11:** Implementation (LangSmith integration, LLM-as-Judge)
 
-- Auto assignment generation
-- Full workflow automation
-- Cost optimization (Semantic Caching)
-- Dashboard (optional)
+### Goal
 
-**New Technologies**:
+Add production-grade monitoring and evaluation to your agent system. Track costs, measure performance improvements, implement LLM-as-Judge.
 
-- Streamlit (or Next.js) - optional
-- **Semantic Caching**
-- **Streaming responses**
+### Why LangSmith?
 
-**Learning Topics** (Week 9-10):
+- **Quick Setup:** 5 minutes (vs hours for LGTM Stack)
+- **AI-Specific:** Built for LLM applications
+- **Features:** Tracing, evaluation, datasets, playgrounds
+- **Cost Tracking:** Per-agent cost monitoring
+- **Defer Infrastructure:** Learn K8s/LGTM later (Phase 5b)
 
-- [ ] **Cost Optimization**: Reduce API costs with Semantic Caching
-- [ ] **UX Optimization**: Improve perceived speed with Streaming
-- [ ] **Multi-Agent Collaboration**: Sequential/parallel execution of multiple agents
-- [ ] **Monitoring**: Track token usage, response time, costs
+### Learning Topics (Week 10)
 
-**Tasks**:
+#### LangSmith Fundamentals
 
-- [ ] Implement `src/agents/assignment_generator.py`
-- [ ] Implement `src/agents/curriculum_architect.py`
-- [ ] **Implement Semantic Caching**:
-  - [ ] Create `src/utils/semantic_cache.py`
-  - [ ] Detect similar queries with question embeddings
-  - [ ] Return cached response if similarity > 0.95
-  - [ ] Goal: Identical/similar questions → $0 cost
-- [ ] **Implement Streaming responses**:
-  - [ ] Server-Sent Events (SSE) or async generator
-  - [ ] Display responses in real-time
-  - [ ] Improve user experience
-- [ ] **Monitoring Dashboard** (optional):
-  - [ ] `src/monitoring/tracker.py`
-  - [ ] Track token usage
-  - [ ] Calculate costs (per input/output token)
-  - [ ] Cache hit rate
-  - [ ] Simple CLI command for statistics
-- [ ] Connect entire workflow
-- [ ] (Optional) Build web dashboard
-- [ ] Use complete system in `learning/week-05-multi-agent/`
-- [ ] Update final README (complete usage examples)
-- [ ] **Document performance improvements**:
-  - Before: Cost/response time
-  - After: Cost/response time
-  - Calculate improvement rate
+**Core Concepts:**
+- Distributed tracing for LLM calls
+- Cost tracking per agent
+- Evaluation datasets
+- LLM-as-Judge patterns
+- Prompt playgrounds
 
-**Fully Automated Workflow**:
+**Exercises:**
+
+```typescript
+// learning/week-10-langsmith/exercises/tracing.ts
+// 1. Setup LangSmith project
+// 2. Trace single agent call
+// 3. Trace multi-agent workflow
+// 4. View traces in LangSmith UI
+// 5. Analyze costs per agent
+
+// learning/week-10-langsmith/exercises/evaluation.ts
+// 1. Create evaluation dataset
+// 2. Run agent on dataset
+// 3. LLM-as-Judge evaluation
+// 4. Compare before/after improvements
+```
+
+**LangSmith Setup:**
+
+```typescript
+// src/monitoring/langsmith.ts
+import { Client } from "langsmith";
+
+export class LangSmithMonitor {
+  private client: Client;
+
+  constructor() {
+    this.client = new Client({
+      apiKey: process.env.LANGSMITH_API_KEY,
+    });
+  }
+
+  async traceAgent(
+    agentName: string,
+    input: unknown,
+    output: unknown,
+    metadata?: Record<string, any>
+  ) {
+    return this.client.createRun({
+      name: agentName,
+      run_type: "chain",
+      inputs: { input },
+      outputs: { output },
+      extra: metadata,
+    });
+  }
+}
+```
+
+**Resources:**
+- [LangSmith Docs](https://docs.smith.langchain.com/)
+- [LLM Evaluation Guide](https://www.anthropic.com/research/evaluating-ai-systems)
+
+#### Evaluation Patterns
+
+**Core Concepts:**
+- Golden datasets (reference examples)
+- LLM-as-Judge (GPT-4o evaluates Claude)
+- Evaluation metrics (accuracy, relevance, clarity)
+- A/B testing (before/after comparison)
+- Regression testing (prevent quality drops)
+
+**Evaluation Criteria:**
+
+```typescript
+const EvaluationSchema = z.object({
+  accuracy: z.number().min(0).max(10),
+  relevance: z.number().min(0).max(10),
+  completeness: z.number().min(0).max(10),
+  clarity: z.number().min(0).max(10),
+  reasoning: z.string(),
+  overall_score: z.number().min(0).max(10),
+});
+```
+
+### Implementation (Week 11)
+
+#### LangSmith Integration
+
+```typescript
+// src/agents/base-agent.ts (updated)
+import { LangSmithMonitor } from "../monitoring/langsmith";
+
+export abstract class BaseAgent {
+  constructor(
+    protected client: Anthropic,
+    protected monitor?: LangSmithMonitor
+  ) {}
+
+  abstract execute(input: unknown): Promise<unknown>;
+
+  protected async callClaude(params: MessageCreateParams) {
+    const startTime = Date.now();
+
+    try {
+      const response = await this.client.messages.create(params);
+
+      // Trace to LangSmith
+      if (this.monitor) {
+        await this.monitor.traceAgent(
+          this.constructor.name,
+          params,
+          response,
+          {
+            duration_ms: Date.now() - startTime,
+            model: params.model,
+            tokens: response.usage,
+          }
+        );
+      }
+
+      return response;
+    } catch (error) {
+      // Trace errors too
+      if (this.monitor) {
+        await this.monitor.traceAgent(
+          this.constructor.name,
+          params,
+          { error: error.message },
+          { duration_ms: Date.now() - startTime, failed: true }
+        );
+      }
+      throw error;
+    }
+  }
+}
+```
+
+#### LLM-as-Judge
+
+```typescript
+// src/evaluation/judge.ts
+import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
+
+export class LLMJudge {
+  private judgeClient: OpenAI; // Use GPT-4o as judge
+
+  constructor() {
+    this.judgeClient = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+
+  async evaluate(
+    prompt: string,
+    response: string,
+    criteria: string[]
+  ): Promise<Evaluation> {
+    const judgePrompt = `
+Evaluate the following AI response:
+
+Prompt: ${prompt}
+Response: ${response}
+
+Evaluation Criteria:
+${criteria.map((c, i) => `${i + 1}. ${c}`).join("\n")}
+
+For each criterion, provide:
+- Score (0-10)
+- Reasoning (1-2 sentences)
+
+Then provide an overall score (0-10) and summary.
+
+Return as JSON matching this schema:
+{
+  "accuracy": number,
+  "relevance": number,
+  "completeness": number,
+  "clarity": number,
+  "reasoning": string,
+  "overall_score": number
+}
+`;
+
+    const judgeResponse = await this.judgeClient.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        { role: "system", content: "You are an expert AI evaluator." },
+        { role: "user", content: judgePrompt }
+      ],
+      response_format: { type: "json_object" },
+    });
+
+    return JSON.parse(judgeResponse.choices[0].message.content);
+  }
+
+  async compareVersions(
+    prompt: string,
+    versionA: string,
+    versionB: string
+  ): Promise<{ winner: "A" | "B" | "tie", reasoning: string }> {
+    const comparePrompt = `
+Compare these two AI responses:
+
+Prompt: ${prompt}
+
+Version A: ${versionA}
+Version B: ${versionB}
+
+Which is better? Consider accuracy, relevance, clarity, completeness.
+Return JSON: { "winner": "A" | "B" | "tie", "reasoning": string }
+`;
+
+    const response = await this.judgeClient.chat.completions.create({
+      model: "gpt-4o",
+      messages: [{ role: "user", content: comparePrompt }],
+      response_format: { type: "json_object" },
+    });
+
+    return JSON.parse(response.choices[0].message.content);
+  }
+}
+```
+
+#### Golden Dataset
+
+```typescript
+// src/evaluation/dataset.ts
+import fs from "fs/promises";
+
+export interface GoldenExample {
+  id: string;
+  prompt: string;
+  expected_output: Record<string, any>;
+  criteria: string[];
+  notes?: string;
+}
+
+export class GoldenDataset {
+  private examples: GoldenExample[] = [];
+
+  async load(filePath: string) {
+    const data = await fs.readFile(filePath, "utf-8");
+    this.examples = JSON.parse(data);
+  }
+
+  async save(filePath: string) {
+    await fs.writeFile(
+      filePath,
+      JSON.stringify(this.examples, null, 2)
+    );
+  }
+
+  add(example: GoldenExample) {
+    this.examples.push(example);
+  }
+
+  getAll(): GoldenExample[] {
+    return this.examples;
+  }
+}
+
+// data/evaluations/golden-dataset.json
+[
+  {
+    "id": "prompt-review-1",
+    "prompt": "Summarize this article",
+    "expected_output": {
+      "clarity_score": 3,
+      "issues": ["Vague reference", "No format specified"],
+      "suggestions": ["Provide article content", "Specify length"]
+    },
+    "criteria": [
+      "Identifies vagueness",
+      "Suggests specific improvements",
+      "Provides improved version"
+    ]
+  },
+  {
+    "id": "code-review-1",
+    "prompt": "Review code with missing error handling",
+    "expected_output": {
+      "judgment": "rewrite",
+      "issues": [
+        {
+          "severity": "critical",
+          "category": "error-handling"
+        }
+      ]
+    },
+    "criteria": [
+      "Detects missing error handling",
+      "Classifies as critical",
+      "Suggests retry logic"
+    ]
+  }
+]
+```
+
+#### Evaluation Workflow
+
+```typescript
+// src/evaluation/workflow.ts
+export class EvaluationWorkflow {
+  constructor(
+    private agent: BaseAgent,
+    private judge: LLMJudge,
+    private dataset: GoldenDataset
+  ) {}
+
+  async runEvaluation() {
+    const results = [];
+
+    for (const example of this.dataset.getAll()) {
+      // Run agent
+      const output = await this.agent.execute(example.prompt);
+
+      // Evaluate with judge
+      const evaluation = await this.judge.evaluate(
+        example.prompt,
+        JSON.stringify(output),
+        example.criteria
+      );
+
+      results.push({
+        example_id: example.id,
+        output,
+        evaluation,
+      });
+    }
+
+    return this.summarizeResults(results);
+  }
+
+  private summarizeResults(results: any[]) {
+    const avgScore = results.reduce(
+      (sum, r) => sum + r.evaluation.overall_score,
+      0
+    ) / results.length;
+
+    return {
+      total_examples: results.length,
+      average_score: avgScore,
+      passed: results.filter(r => r.evaluation.overall_score >= 7).length,
+      failed: results.filter(r => r.evaluation.overall_score < 7).length,
+      details: results,
+    };
+  }
+}
+```
+
+### Tasks (Week 11)
+
+- [ ] Setup LangSmith account and project
+- [ ] Integrate LangSmith tracing into `BaseAgent`
+- [ ] Implement `LLMJudge` class
+- [ ] Create golden dataset (10+ examples)
+- [ ] Implement evaluation workflow
+- [ ] Run evaluation on current agents
+- [ ] Create before/after comparison (improve prompts based on evaluation)
+- [ ] Document results in `learning/week-11/notes.md`
+- [ ] Update CLI for evaluation commands
+- [ ] Prove improvement with numbers (e.g., 70% → 85% accuracy)
+
+### CLI Updates
 
 ```bash
-# Start weekly learning
-python src/cli.py weekly-cycle --week 6 --topic "Evaluation Metrics"
+# Run evaluation on agent
+npm run cli evaluate --agent prompt-reviewer --dataset data/evaluations/golden-dataset.json
 
-# Auto execution:
-# 1. Curriculum Architect: Create learning/week-06-evaluation-metrics/
-# 2. Recommend learning resources
-# 3. (After user studies)
-# 4. Assignment Generator: Create assignments/assignment-01.md
-# 5. (After user writes code)
-# 6. Code Critic: Auto-review and save to reviews/
-# 7. Progress Tracker: Update Vector DB
+# Output:
+{
+  "total_examples": 10,
+  "average_score": 7.8,
+  "passed": 8,
+  "failed": 2,
+  "details": [...]
+}
+
+# Compare two prompt versions
+npm run cli compare-prompts \
+  --prompt "Summarize this" \
+  --version-a "Summarize this article" \
+  --version-b "Provide a 3-sentence summary of the following article"
+
+# Output:
+{
+  "winner": "B",
+  "reasoning": "Version B is more specific about length (3 sentences) and clearer about input format."
+}
+
+# View costs in LangSmith UI
+# Visit: https://smith.langchain.com/
 ```
 
-**Success Criteria**:
+### Success Criteria
 
-- [ ] Full cycle automated: "Generate this week's plan" → assignment → review → save
-- [ ] Actually use for at least 4 weeks
-- [ ] 12+ weeks of learning records in `learning/` directory
+- [ ] LangSmith tracing integrated across all agents
+- [ ] Golden dataset created (10+ examples)
+- [ ] LLM-as-Judge evaluation working
+- [ ] Quantifiable improvement demonstrated (before/after)
+- [ ] Cost tracking per agent visible in LangSmith
+- [ ] Evaluation results documented
+- [ ] Foundation ready for Phase 5 (Deployment)
 
 ---
 
-## Tech Stack
+## Phase 5: Production & Portfolio (2 weeks)
 
-### Language Strategy
+### Timeline
 
-**Python-Centric Approach** (this project):
+- **Week 12:** Deployment (Vercel, environment setup)
+- **Week 13:** Portfolio polish (README, docs, blog post)
 
-- **Primary**: Python 3.11+
-- **Reason**: Center of AI ecosystem, optimal for learning tool development
-- **Advantage**: LangChain, LangGraph, most AI libraries prioritize Python
+### Goal
 
-**TypeScript Later** (optional):
+Deploy your agent system to production (Vercel), polish documentation, create demo, write blog post. Make it portfolio-ready.
 
-- **When**: After Phase 5, when web UI is needed
-- **Purpose**: Next.js, Vercel AI SDK for productization stage
-- **Strategy**: Complete core logic in Python, add TypeScript if needed
+### Why Vercel?
 
-### Framework Strategy
+- **Simple Deployment:** Git push → live
+- **Serverless Functions:** Perfect for agents
+- **Environment Variables:** Built-in secrets management
+- **Free Tier:** Sufficient for portfolio project
+- **TypeScript Native:** Zero config needed
 
-**Go Deep on One**:
+### Tasks (Week 12: Deployment)
 
-- **Choice**: LangGraph (optimal for state-based workflows)
-- **Reason**:
-  - Supports complex agent orchestration
-  - Easy to implement circular structures (retry logic)
-  - Provides visualization and debugging tools
-- **Caution**: Don't try to learn all of LangChain
-  - Focus intensively on LangGraph only
-  - Selectively use necessary components
+#### Vercel Setup
 
-### Essential (Phase 1-2)
+```typescript
+// api/agents/prompt-reviewer.ts (Vercel serverless function)
+import { PromptReviewer } from "../../src/agents/prompt-reviewer";
+import Anthropic from "@anthropic-ai/sdk";
 
-- **Language**: Python 3.11+
-- **LLM**: Claude 3.5 Sonnet (Anthropic API)
-- **Storage**: JSON files
-- **Interface**: CLI (argparse)
-- **Validation**: Pydantic (Structured Output)
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
 
-### Expansion (Phase 3-4)
+  const { prompt } = req.body;
 
-- **Vector DB**: Supabase Vector or Chroma
-- **Embedding**: OpenAI text-embedding-3-small
-- **Orchestration**: LangGraph
-- **Dependency Management**: Poetry or uv
-- **Evaluation**: LLM-as-a-Judge (GPT-4o)
+  if (!prompt) {
+    return res.status(400).json({ error: "Prompt is required" });
+  }
 
-### Optional (Phase 5)
+  const client = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY,
+  });
 
-- **Frontend**: Streamlit (or Next.js)
-- **Deployment**: Docker, Railway/Render
-- **Monitoring**: LangSmith or Helicone (optional)
+  const reviewer = new PromptReviewer(client);
+  const review = await reviewer.execute(prompt);
 
-### Development Tools
+  return res.status(200).json(review);
+}
 
-- **Version Control**: Git + GitHub
-- **Code Quality**: ruff, mypy
-- **Documentation**: Markdown, docstrings
-- **Testing**: pytest
+// vercel.json
+{
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@3.0.0"
+    }
+  },
+  "env": {
+    "ANTHROPIC_API_KEY": "@anthropic-api-key",
+    "OPENAI_API_KEY": "@openai-api-key",
+    "LANGSMITH_API_KEY": "@langsmith-api-key"
+  }
+}
+```
 
-## Expected Learning Outcomes
+#### Web UI (Optional)
 
-### Technical Capabilities
+```typescript
+// Simple Next.js UI for demo
+// app/page.tsx
+"use client";
 
-- **AI Engineering Fundamentals**
-  - Prompt engineering (System Prompt, Few-shot, Chain-of-Thought)
-  - Structured Output design
-  - Token optimization
+import { useState } from "react";
 
-- **Agent Design**
-  - Role separation and responsibility definition
-  - Inter-agent communication
-  - State management
+export default function Home() {
+  const [prompt, setPrompt] = useState("");
+  const [review, setReview] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-- **Evaluation Systems**
-  - Quality metrics definition
-  - Automated evaluation logic
-  - Feedback loop implementation
+  async function handleReview() {
+    setLoading(true);
+    const res = await fetch("/api/agents/prompt-reviewer", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt }),
+    });
+    const data = await res.json();
+    setReview(data);
+    setLoading(false);
+  }
 
-- **Vector DB Utilization**
-  - Embedding generation and storage
-  - Similarity search
-  - Context management
+  return (
+    <div className="container mx-auto p-8">
+      <h1 className="text-4xl font-bold mb-8">AI PE Learning Agent</h1>
 
-- **Complex Workflows**
-  - State-based flow with LangGraph
-  - Conditional branching
-  - Circular structures (retry logic)
+      <div className="space-y-4">
+        <textarea
+          className="w-full p-4 border rounded"
+          rows={4}
+          placeholder="Enter your prompt to review..."
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+        />
 
-### Product Capabilities
+        <button
+          className="px-6 py-2 bg-blue-600 text-white rounded"
+          onClick={handleReview}
+          disabled={loading}
+        >
+          {loading ? "Reviewing..." : "Review Prompt"}
+        </button>
 
-- Real problem definition and solution design
-- MVP-first development strategy
-- Gradual feature expansion
-- User feedback integration (you are the user)
+        {review && (
+          <div className="p-4 bg-gray-100 rounded">
+            <pre>{JSON.stringify(review, null, 2)}</pre>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+```
 
-### Portfolio Value
+#### Deployment Checklist
 
-- "Why did you build this?" → Clear motivation
-- "How did you approach it?" → Phase-by-phase evolution
-- "What difficulties?" → Summarized in technical blog
-- "Results?" → 12 weeks of learning records in `learning/` directory
+- [ ] Create Vercel account
+- [ ] Connect GitHub repository
+- [ ] Add environment variables in Vercel dashboard
+- [ ] Deploy main branch
+- [ ] Test deployed agents
+- [ ] Setup custom domain (optional)
+- [ ] Add usage analytics (optional)
 
-## Risks and Mitigation Strategies
+### Tasks (Week 13: Portfolio Polish)
 
-### Risk 1: Scope Creep
-
-**Problem**: Failing to complete by trying to build perfect system
-
-**Mitigation**:
-
-- Set clear completion criteria per Phase
-- Each Phase independently usable
-- "Works even if not perfect → next stage"
-
-### Risk 2: Only Focus on Tool Development
-
-**Problem**: Not properly learning AI engineering fundamentals
-
-**Mitigation**:
-
-- 70% of weekly time on concept learning/practice
-- Only 30% on tool development
-- Study related concepts before each Phase
-- Must fill `learning/` directory (no coding without learning)
-
-### Risk 3: Excessive Tech Stack
-
-**Problem**: Trying to learn too many technologies at once
-
-**Mitigation**:
-
-- Phase 1-2 use minimal technologies only
-- Add new technologies one at a time
-- "Learn when needed" approach
-
-### Risk 4: Lack of Motivation
-
-**Problem**: Losing interest and giving up midway
-
-**Mitigation**:
-
-- Each Phase produces "actually usable" results
-- Small achievements weekly (completing `learning/week-N/`)
-- Maintain accountability by sharing on technical blog
-- Growing `learning/` directory itself motivates
-
-## Portfolio Utilization Strategy
-
-### GitHub Repository README Structure
+#### README Optimization
 
 ```markdown
-# AI PE Learning Agent
+# AI Product Engineer Learning Agent
 
-Multi-agent system managing the learning process to become an AI Product Engineer
+> Multi-agent TypeScript system for AI engineering learning management
+
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://your-app.vercel.app)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ## 🎯 Project Background
 
-This project started with a meta-learning approach: "Building AI agents to become an AI engineer."
-Naturally learned prompt engineering, agent orchestration, and evaluation systems while creating the tools.
+**Meta-Learning Approach:** Built AI agents in TypeScript to manage my learning journey to becoming an AI Product Engineer.
+
+**Portfolio Highlight:** Demonstrates agent orchestration, RAG implementation, and production deployment skills.
+
+**Career Context:**
+- **VNTG Experience:** AI-powered Figma-to-Code automation
+- **sdd-system:** 9-agent TypeScript architecture
+- **This Project:** Agent pipeline specialist expertise
 
 ## 🏗️ System Architecture
 
-[System diagram]
+[Include diagram showing 3 agents + Vector DB + LangSmith]
 
-4 collaborating agents:
+**4 Collaborating Agents:**
+1. **Prompt Reviewer:** Evaluates prompt quality, suggests improvements
+2. **Code Critic:** Reviews AI code for best practices and security
+3. **Progress Tracker:** Manages learning history with Vector DB
+4. **Assignment Generator:** (Future) Auto-generates practice tasks
 
-- **Curriculum Architect**: Generate weekly learning plans
-- **Assignment Generator**: Auto-generate practice assignments
-- **Code Critic**: Code review based on AI Best Practices
-- **Progress Tracker**: Track learning history and recommend reviews
+**Tech Stack:** TypeScript, Anthropic SDK, Supabase Vector, LangSmith, Vercel
 
 ## 📚 Learning Process (Dogfooding)
 
-Built and used this system simultaneously. See 12 weeks of learning records in [`learning/`](./learning) directory:
+Used this system for my own learning over 13 weeks. See full learning records in [`learning/`](./learning):
 
-- [Week 1: Prompt Engineering](./learning/week-01-prompt-engineering)
-- [Week 2: Structured Output](./learning/week-02-structured-output)
-- [Week 3: RAG Basics](./learning/week-03-rag-basics)
-- ...
+- [Week 1: Anthropic SDK](./learning/week-01-anthropic-sdk)
+- [Week 2: Prompt Patterns](./learning/week-02-prompt-patterns)
+- [Week 3: Prompt Reviewer Implementation](./learning/week-03-prompt-reviewer)
+- ... (13 weeks)
 
 Each week includes:
-
 - Learning notes (`notes.md`)
-- Practice code (`exercises/`)
-- Agent-generated assignments (`assignments/`)
-- Code review results (`reviews/`)
+- Practice exercises (`exercises/*.ts`)
+- Agent reviews (`reviews/*.json`)
 
-**Example**: [Week 2 code review failure → improvement case](./learning/week-02/reviews/)
+**Example:** [Week 6 code review failure → improvement case](./learning/week-06/reviews/)
 
 ## 🚀 Key Features
 
-[Usage example screenshots/GIFs]
+**1. Prompt Quality Review**
+- Clarity, specificity, hallucination risk scoring
+- Automatic improvement suggestions
+- CLI + API interface
+
+**2. AI Code Review**
+- Security vulnerability detection
+- Best practices enforcement
+- Pass/rewrite judgment system
+
+**3. Learning History Management**
+- Vector DB for semantic search
+- Weak concept identification
+- Personalized review recommendations
+
+**4. Production Monitoring**
+- LangSmith tracing
+- Cost tracking per agent
+- LLM-as-Judge evaluation
+
+## 📊 Results
+
+**Quantifiable Improvements:**
+- Prompt quality: 40% → 85% (LLM-as-Judge measured)
+- Code review accuracy: 75% → 92%
+- 13 weeks learning records (50+ exercises, 30+ reviews)
+
+**Cost Optimization:**
+- Agent-specific model selection (Haiku vs Sonnet)
+- Embedding caching (50% cost reduction)
+- LangSmith monitoring for optimization
 
 ## 🛠️ Tech Stack
 
-- Python 3.11+ / LangGraph / Claude API
-- Vector DB (Supabase) / OpenAI Embeddings
-
-## 📖 Documentation
-
-<!-- TODO: Create these documents
-- [Architecture](./docs/ARCHITECTURE.md) - Detailed system design
-- [Development Log](./docs/DEVELOPMENT.md) - Development process by Phase
-- [Learnings](./docs/LEARNINGS.md) - Core AI Engineering learnings
--->
-
-## 💡 Key Insights
-
-What I learned through this project:
-
-- Meta-prompting for automated prompt evaluation
-- Personalized learning recommendations with Vector DB
-- Quality assurance loop with LangGraph's circular structure
-
-Details: [Technical blog series](#)
+- **Language:** TypeScript 5+
+- **AI:** Anthropic SDK, OpenAI Embeddings
+- **Validation:** Zod
+- **Vector DB:** Supabase Vector
+- **Monitoring:** LangSmith
+- **Deployment:** Vercel
 
 ## 🎓 Portfolio
 
-This project is a portfolio for transitioning to AI Product Engineer career.
+This project demonstrates:
+- Multi-agent orchestration
+- RAG implementation with Vector DB
+- Production deployment and monitoring
+- TypeScript expertise in AI context
+- VNTG + Personal project synergy
 
-**Contact**: [email]
-```
+**Contact:** [Your email]
+**Blog:** [Your blog post]
 
-### Technical Blog Series
+## 📝 Blog Post
 
-**Writing Strategy**:
-
-- **Frequency**: Weekly or biweekly (12+ posts over 6 months)
-- **Format**: Focus on "solving technical challenges" (not simple summaries)
-- **Structure**: Before/After comparison, share failures, quantitative results
-
-**Post List**:
-
-1. **"Building AI PE Learning Roadmap Agent - 0. Planning"**
-   - Why I started this project
-   - Meta-learning approach
-   - Phase-by-phase plan
-
-2. **"Building Prompt Reviewer - System Prompt Design Process"**
-   - Conditions for good System Prompt
-   - Utilizing Structured Output
-   - Actual review result examples
-   - **Before/After**: Initial vs optimized prompt
-
-3. **"100% Control AI Responses with Guardrails"**
-   - Format deviation problem and solution
-   - Implementing auto-retry logic
-   - **Result**: Response format consistency 60% → 99%
-
-4. **"Implementing Code Review Agent - Auto Best Practice Checks"**
-   - Defining AI code quality metrics
-   - Security vulnerability detection with AST parsing
-   - Pass/rewrite judgment logic
-   - **Failure cases**: Vulnerabilities found in first submission
-
-5. **"How I Reduced AI Hallucination to 0%"**
-   - Defining hallucination problem
-   - Validation & Retry logic design
-   - **Before/After**: Hallucination rate 25% → 0%
-
-6. **"Managing Learning History with Vector DB"**
-   - Embedding strategy
-   - Hybrid Search + Re-ranking implementation
-   - Review recommendations with similarity search
-   - Auto-identify weak concepts
-   - **Performance**: Search accuracy measurement results
-
-7. **"LLM-as-a-Judge: Evaluating AI with AI"**
-   - Need for evaluation system
-   - Auto-grading Claude responses with GPT-4o
-   - Golden Dataset building process
-   - **Result**: Quantifying prompt improvement effects
-
-8. **"Handling Complex Workflows with LangGraph"**
-   - State-based workflow design
-   - Conditional branching and circular structures
-   - Infinite loop problem and solution
-   - Debugging experience
-
-9. **"70% Cost Reduction with Semantic Caching"**
-   - Cost problem analysis
-   - Similar question detection mechanism
-   - **Before/After**: Monthly API cost comparison
-
-10. **"Multi-Agent Collaboration: 4 Agents Working Together"**
-    - State sharing between agents
-    - Sequential vs parallel execution strategy
-    - Real workflow execution examples
-
-11. **"Insights from 12 Weeks of Learning Data"**
-    - Vector DB analysis results
-    - Top 3 most difficult concepts
-    - Learning pattern analysis
-
-12. **"3 Months Studying with AI Agents - Retrospective"**
-    - Actual usage experience
-    - Most useful features
-    - What to improve
-    - Next project plans
-
-### Resume Optimization
-
-**One-line Project Description**:
-"Multi-agent system project building the learning process itself as an AI system for transitioning to AI Product Engineer"
-
-**Include Quantitative Results** (important!):
-
-- **Users**: Self + 10+ testers (when Phase 5 complete)
-- **Learning Records**: 12 weeks, 50+ assignments, 100+ code reviews
-- **Performance Improvements**:
-  - Prompt quality: 40% → 85% accuracy improvement (LLM-as-a-Judge measured)
-  - Response format consistency: 60% → 99% (Guardrails introduction)
-  - Hallucination: 25% → 0% (Validation logic)
-- **Cost Reduction**:
-  - API cost 70% decrease (Semantic Caching)
-  - Cache hit rate: 45%
-- **Technical Blog**: 12 posts, cumulative views (tracked)
-- **Code**: Python 5,000+ lines, test coverage 80%+
-
-**Project Section Example**:
-
-```
-AI PE Learning Agent (2026.01 - 2026.06)
-- Developed multi-agent system for managing AI learning process
-- 4 collaborating agents with LangGraph (prompt reviewer, code evaluator, progress manager)
-- Improved prompt quality 40% → 85% with LLM-as-a-Judge (45%p improvement)
-- Reduced API cost 70% with Semantic Caching introduction
-- Built learning history search system with Vector DB + Hybrid Search
-- Wrote 12 technical blog posts (focused on solving technical challenges)
-- Tech: Python, LangGraph, Claude API, Vector DB, Pydantic
-```
-
-### Interview Preparation
-
-**Interview Question Responses**:
-
-Q: "What was the biggest technical challenge in this project?"
-A: "[Reference learning/week-05-langgraph/notes.md 'Weekly Reflection'] Implementing the code review feedback loop using LangGraph's circular structure. Initially had infinite loop problems, but solved with maximum retry counts and state tracking. Result was significantly improved code quality, with pass rate increasing from 40% to 85%."
-
-Q: "Failure experience and recovery process?"
-A: "During Week 2, first assignment submission, Code Critic agent pointed out prompt injection vulnerability. [Show reviews/review-01.json] There was no user input sanitization. I improved and resubmitted [review-02.json] and passed. This experience made me realize the importance of AI security, and I added input validation as mandatory for all subsequent code."
-
-Q: "What did you actually learn from this project?"
-A: "[Show learning/ directory] Here are 12 weeks of learning records. Each week went through theory learning, practice, assignment completion, and code review, all managed through this agent system. Especially with LLM-as-a-Judge, I confirmed numerically that my prompt quality actually improved by 45%."
-
-Q: "Why did you build this project?"
-A: "While preparing for AI PE career transition, I judged that actually designing and implementing AI agents would be more effective than just attending lectures. And I improved in real-time while using the tool I built myself (Dogfooding). Through this process, I also gained practical optimization experience like reducing API costs by 70%."
-
-Q: "Most proud achievement?"
-A: "Reducing API costs by 70% with Semantic Caching implementation. Detected similar queries with question embeddings, returning cached responses when similarity is 95%+ . Actually achieved 45% cache hit rate, reducing monthly API costs from $150 to $45. When I summarized this experience on my blog, many people showed interest."
-
-## Next Steps
-
-### Immediate Action (This Week)
-
-- [ ] Re-read and revise/supplement this document
-- [ ] Create separate Git repository (`ai-pe-learning-agent`)
-- [ ] Initialize repository structure (create directories)
-- [ ] Setup Python development environment
-- [ ] Issue Claude API key and test
-- [ ] Write `learning/week-01-prompt-engineering/` template
-- [ ] Write Phase 1 detailed design document (docs/DEVELOPMENT.md) <!-- TODO: Create -->
-
-### Questions to Clarify
-
-- [ ] How much time can you invest daily?
-- [ ] When to set Phase 1 target completion date?
-- [ ] Which platform for technical blog? (Medium, personal blog, velog, etc.)
-- [ ] Repository publicity strategy?
-  - Public from start? (Share learning process transparently)
-  - Private first, public after Phase 3 complete?
-- [ ] `learning/` directory publicity scope?
-  - Make all mistakes and failures public? (recommended)
-  - Only publish successes?
+[Link to blog post: "Building a TypeScript Agent Pipeline in 13 Weeks"]
 
 ---
 
-**Last Updated**: 2026-01-25
-**Document Version**: 4.0 (6-month timeline integrated)
-**Author**: Jay Kim
-**Timeline**: 6 months (24 weeks)
+**Note:** This project is part of my transition to AI Product Engineer (Agent Pipeline Specialist).
+See [learning/](./learning) for complete 13-week learning journey.
+```
 
-**Version History**:
+#### Blog Post Outline
 
-- v4.0 (2026-01-25): **6-month timeline integration**
-  - Adjusted phase durations for even distribution (2-3 weeks each)
-  - Phase 0a extended to 4-8 weeks for solid foundation
-  - Added time management guidelines (weekday 1-2h, weekend 4-8h)
-  - Total: 24 weeks with buffer time
-  - See [CAREER-TRANSITION.md](../user/CAREER-TRANSITION.md) for complete plan
-- v3.0 (2026-01-18): Integrated specific technologies and strategies
-  - Detailed learning topics per Phase
-  - Added LLM-as-a-Judge, Semantic Caching
-  - Quantitative performance measurement criteria
-  - Enhanced technical blog strategy
-- v2.0 (2026-01-18): Integrated learning artifacts (learning/) directory
-- v1.0 (2026-01-18): Initial project planning
+**Title:** "Building a TypeScript Agent Pipeline in 13 Weeks: From Frontend Engineer to AI Agent Specialist"
+
+**Structure:**
+1. **Introduction (200 words)**
+   - Why TypeScript for AI agents?
+   - VNTG experience + Personal project synergy
+   - Career positioning: Agent Pipeline Specialist
+
+2. **Week-by-Week Highlights (1000 words)**
+   - Phase 1: First agent in TypeScript (challenges)
+   - Phase 2: Multi-agent orchestration (sdd-system inspiration)
+   - Phase 3: Adding memory with Vector DB
+   - Phase 4: Production monitoring (LangSmith)
+   - Phase 5: Deployment and polish
+
+3. **Technical Deep Dives (800 words)**
+   - TypeScript advantages for AI agents
+   - Agent communication patterns
+   - RAG implementation details
+   - Cost optimization strategies
+
+4. **Results & Learnings (400 words)**
+   - Quantifiable improvements
+   - Mistakes and how I fixed them
+   - What I'd do differently
+
+5. **Conclusion (200 words)**
+   - Next steps (infrastructure learning)
+   - Career outcome
+   - Resources for others
+
+**Publish on:**
+- Personal blog
+- Dev.to
+- Medium (optional)
+- LinkedIn (link to full post)
+
+#### Documentation Polish
+
+- [ ] Complete README with architecture diagram
+- [ ] Add usage examples to README
+- [ ] Write API documentation
+- [ ] Update CLAUDE.md with TypeScript approach
+- [ ] Create ARCHITECTURE.md (system design details)
+- [ ] Add CONTRIBUTING.md (for future contributors)
+- [ ] Polish learning notes for each week
+- [ ] Create demo video (3-5 minutes)
+- [ ] Take screenshots for README
+- [ ] Write blog post draft
+
+### Success Criteria
+
+- [ ] Deployed to Vercel and working
+- [ ] README is portfolio-ready
+- [ ] Architecture diagram included
+- [ ] Demo video created
+- [ ] Blog post published (or draft ready)
+- [ ] All learning records polished
+- [ ] GitHub profile updated with project
+- [ ] Resume updated with quantifiable results
+
+---
+
+## VNTG & sdd-system Synergy
+
+### VNTG Experience → Personal Project
+
+**Code Generation Patterns:**
+- VNTG: SDD → HTML/CSS/JS → React components
+- Personal: Prompts → Agent orchestration → Validated outputs
+- **Apply:** Multi-stage validation pipeline
+
+**Production Constraints:**
+- VNTG: Design fidelity, reusable components, team collaboration
+- Personal: Cost optimization, response quality, agent reliability
+- **Apply:** Production-ready mindset, monitoring, evaluation
+
+**AI DevTools Experience:**
+- VNTG: Claude Code Sonnet, component generation, IDE integration
+- Personal: Anthropic SDK, agent patterns, orchestration
+- **Apply:** Real-world AI system development
+
+### Personal Learning → VNTG Contribution
+
+**Multi-Agent Patterns:**
+- Personal: Sequential, parallel, conditional orchestration
+- VNTG: Propose pipeline improvements (faster, cheaper, better)
+- **Value:** "Reduced code generation cost by X%" (if implemented)
+
+**LangSmith Monitoring:**
+- Personal: Cost tracking, tracing, evaluation per agent
+- VNTG: Propose cost dashboard for code generation
+- **Value:** "Increased visibility into AI costs"
+
+**TypeScript AI Expertise:**
+- Personal: Anthropic SDK, Zod validation, type-safe agents
+- VNTG: Better tooling, cleaner code, fewer runtime errors
+- **Value:** "Improved code generation reliability"
+
+### sdd-system Reference Points
+
+**Phase 2 (Multi-Agent):**
+- **Study:** Command pattern (orchestrator delegates to agents)
+- **Study:** Agent-to-agent communication protocols
+- **Study:** Checkpoint system for shared state
+- **Apply:** Similar orchestration in your agent system
+
+**Phase 3 (Memory):**
+- **Study:** How sdd-system maintains context across agents
+- **Study:** Context optimization strategies
+- **Apply:** Vector DB as persistent memory layer
+
+**Phase 4 (Optimization):**
+- **Study:** Parallel execution patterns
+- **Study:** Agent specialization for efficiency
+- **Apply:** Model selection per agent (Haiku vs Sonnet)
+
+### Career Narrative
+
+**Resume Positioning:**
+```
+AI Product Engineer - Agent Pipeline Specialist
+
+VNTG (TypeScript AI DevTools)
+→ Production AI systems at scale
+→ Figma-to-Code automation
+→ 4-stage validation pipeline
+
+Personal Project (Agent Orchestration)
+→ Multi-agent TypeScript system
+→ RAG with Vector DB
+→ Production deployment + monitoring
+
+sdd-system (9-Agent Architecture)
+→ Complex orchestration patterns
+→ Agent specialization
+→ State management across agents
+
+Combined: Unique expertise in Agent Pipelines + AI DevTools
+```
+
+**Interview Talking Points:**
+- "At VNTG, I work on AI-powered code generation. For my personal project, I built a multi-agent system to manage my learning..."
+- "I studied the sdd-system 9-agent architecture and applied those patterns to my own project..."
+- "I can show quantifiable results: 85% prompt quality improvement, 50% cost reduction through agent optimization..."
+
+---
+
+## Success Metrics (13 Weeks)
+
+### Technical
+
+- [ ] 3 agents working together (Prompt Reviewer, Code Critic, Progress Tracker)
+- [ ] TypeScript codebase with proper types (80%+ type coverage)
+- [ ] Vector DB with learning history (100+ entries)
+- [ ] LangSmith monitoring integrated across all agents
+- [ ] Deployed to Vercel and accessible online
+- [ ] Tests written (Vitest, 70%+ coverage)
+
+### Learning
+
+- [ ] 13 weeks of learning records in `learning/`
+- [ ] 30+ code examples and exercises
+- [ ] 20+ agent reviews (dogfooding)
+- [ ] 10+ failed → improved review cycles
+- [ ] Weak concepts identified and addressed
+
+### Portfolio
+
+- [ ] Production-ready GitHub repository
+- [ ] Comprehensive README with demos and diagrams
+- [ ] 1+ blog post published (on agent patterns or learning journey)
+- [ ] Demo video (3-5 minutes)
+- [ ] Quantifiable results documented
+- [ ] Resume updated with project
+
+### Career
+
+- [ ] Clear "Agent Pipeline Specialist" positioning
+- [ ] VNTG + sdd-system + Personal project narrative
+- [ ] Resume updated with quantifiable achievements
+- [ ] GitHub profile showcases project
+- [ ] Ready to apply for AI PE positions
+
+---
+
+## Risk Mitigation
+
+### Risk 1: Missing Infrastructure Knowledge for Deployment
+
+**Problem:** Vercel is simple, but what about K8s/LGTM for advanced roles?
+
+**Mitigation:**
+- Phase 5b (optional, weeks 14-17): Learn Docker, K8s, LGTM Stack
+- Current agents can be deployed to K8s later
+- Focus on agent concepts now, infrastructure when needed
+
+### Risk 2: Custom Orchestration More Complex Than LangGraph
+
+**Problem:** Building orchestration from scratch might be harder
+
+**Mitigation:**
+- Start simple (sequential execution: Agent A → Agent B)
+- Learn from sdd-system patterns (proven architecture)
+- Add LangGraph.js if custom approach too complex (Week 10)
+
+### Risk 3: TypeScript AI Ecosystem Less Mature Than Python
+
+**Problem:** Fewer libraries, examples, community support
+
+**Mitigation:**
+- Anthropic SDK is production-ready in TypeScript
+- Supabase has excellent TypeScript support
+- LangSmith supports TypeScript
+- Community growing fast (LangChain.js, etc.)
+
+### Risk 4: 13 Weeks Too Aggressive
+
+**Problem:** Might not finish in 3 months
+
+**Mitigation:**
+- Each phase independently useful (can pause after any phase)
+- Week 0 optional (skip if already comfortable)
+- Phase 5b optional (infrastructure can wait)
+- Can extend to 16-20 weeks if needed
+
+---
+
+## Extended Learning (Optional, Weeks 14+)
+
+### Phase 5b: Advanced Infrastructure (Weeks 14-17)
+
+**Goal:** Learn Docker, K8s, LGTM Stack for advanced deployment
+
+**Topics:**
+- Docker containerization
+- Kubernetes deployment (minikube locally)
+- Grafana LGTM Stack (Loki, Grafana, Tempo, Mimir)
+- OpenTelemetry instrumentation
+- Agent-specific monitoring dashboards
+
+**Deliverable:** Agents deployed on K8s with full observability
+
+### Phase 6: Market Fit (Weeks 18-24)
+
+**Goal:** Polish portfolio, apply for jobs, prepare for interviews
+
+**Tasks:**
+- Write 2-3 more blog posts
+- Contribute to open source (LangChain.js, etc.)
+- Polish resume and LinkedIn
+- Apply to 10+ AI PE positions
+- Practice interview questions
+- Prepare technical presentation
+
+**Deliverable:** Job offers
+
+---
+
+## Resources
+
+### Documentation
+
+- [Anthropic SDK (TypeScript)](https://github.com/anthropics/anthropic-sdk-typescript)
+- [Zod Documentation](https://zod.dev/)
+- [Supabase Vector](https://supabase.com/docs/guides/ai/vector-columns)
+- [LangSmith Docs](https://docs.smith.langchain.com/)
+- [Vercel Deployment](https://vercel.com/docs)
+
+### Learning
+
+- [Anthropic Prompt Engineering](https://docs.anthropic.com/en/docs/prompt-engineering)
+- [OpenAI Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)
+- [LLM Evaluation Best Practices](https://www.anthropic.com/research/evaluating-ai-systems)
+
+### Inspiration
+
+- [LangChain.js](https://js.langchain.com/docs/get_started/introduction)
+- [Vercel AI SDK](https://sdk.vercel.ai/docs)
+- [sdd-system](../../../sdd-system) (your own project)
+
+---
+
+## Next Steps
+
+### This Week (Week 0)
+
+- [ ] Review this roadmap
+- [ ] Setup TypeScript project
+- [ ] Install Anthropic SDK
+- [ ] Run `hello-claude.ts` successfully
+- [ ] Create `learning/week-01-anthropic-sdk/notes.md` template
+- [ ] Plan Phase 1 start date
+
+### Questions to Clarify
+
+- [ ] Confirm 13-week timeline is realistic
+- [ ] Decide on Phase 5b (infrastructure) priority
+- [ ] Choose blog platform (Dev.to, Medium, personal site)
+- [ ] Confirm repository will be public from start
+
+---
+
+**Last Updated:** 2026-01-27
+**Document Version:** 2.0 (TypeScript Edition)
+**Author:** Claude (with Jay Kim)
+**Timeline:** 13 weeks core learning (3 months)
+
+**Version History:**
+
+- v2.0 (2026-01-27): **TypeScript-first rewrite**
+  - Complete restructure for TypeScript approach
+  - Removed Phase 0a (infrastructure deferred)
+  - Added sdd-system synergy sections
+  - Compressed to 13 weeks (3 months)
+  - Added VNTG context and career positioning
+  - Infrastructure moved to optional Phase 5b
+- v1.0 (2026-01-25): Original Python-based roadmap (6 months)
+
+---
+
+**End of ROADMAP.md**
